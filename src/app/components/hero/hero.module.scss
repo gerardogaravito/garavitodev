@@ -1,0 +1,96 @@
+@import '../../sass/variables.scss';
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 500px;
+}
+
+.left {
+  width: 50%;
+  height: 250px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.square {
+  background-color: $primary-color;
+  transition: border-radius 0.3s ease;
+  // min-height: 250px;
+  // height: 250px;
+}
+
+.at {
+  font-size: 14px;
+  font-family: 'PP_Mori_Light_Italic';
+  transition: color 0.3s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 1;
+  margin-left: -73px;
+  padding-bottom: 36px;
+  padding-top: 96px;
+  height: 250px;
+}
+
+.title {
+  font-size: 36px;
+  font-family: 'PP_Mori_Semibold';
+  font-weight: 100;
+}
+
+.engineer {
+  font-family: 'PP_Mori_Light_Italic';
+  font-size: 24px;
+}
+.mexico {
+  font-family: 'PP_Mori_Italic';
+  font-size: 22px;
+}
+.letter_e {
+  font-family: 'PP_Mori';
+}
+
+.clock {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 24px;
+  min-width: 175px;
+
+  &__numbers {
+    font-family: 'PP_Mori_Light';
+  }
+
+  &__divider {
+    animation: blink 1s infinite;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

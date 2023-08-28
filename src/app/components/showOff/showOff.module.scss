@@ -1,0 +1,63 @@
+@import '../../sass//variables.scss';
+
+.layout {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr / 1fr;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 1;
+}
+
+.foreground {
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// background stuff
+.tv {
+  width: 250px;
+  height: 333.33px;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  position: relative;
+
+  &__primis {
+    opacity: 0.5;
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 10;
+  }
+  &__seguns {
+    opacity: 0.5;
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 15;
+  }
+  &__tercis {
+    opacity: 0.5;
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 20;
+  }
+}
+
+// foreground stuff
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hotpink;
+  height: 105px;
+  width: 250px;
+  cursor: pointer;
+  border: 1px solid $white-color;
+}
