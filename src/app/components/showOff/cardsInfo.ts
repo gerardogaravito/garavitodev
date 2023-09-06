@@ -20,7 +20,7 @@ export const cardsInfo: cardsInfoType[] = [
     title: 'gggraph',
     tabName: '',
     dates: '',
-    url: 'https://graph-exercise.vercel.app/',
+    url: 'https://gggraph.garavito.dev/',
     isFromRight: false,
     isFromMiddle: false,
     position: { x: 150, y: 100 },

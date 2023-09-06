@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 import dynamic from 'next/dynamic';
 
@@ -16,8 +18,10 @@ const Email = dynamic(() => import('./components/contact/Email'), {
 
 function Home() {
   const [heroRendered, setHeroRendered] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
+    // router.push('/');
     setHeroRendered(true);
   }, []);
 

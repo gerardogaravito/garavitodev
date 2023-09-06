@@ -35,7 +35,7 @@ export const photosInfo: photoInfoType[] = [
       columnEnd: '4',
     },
     title: 'plastilina cover art',
-    date: '[go listen]',
+    date: '[go listen ↵]',
     url: 'https://soundcloud.com/garavito666/plastilina',
   },
   {
