@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 500px;
+  z-index: 20;
 }
 
 .left {
@@ -25,8 +26,6 @@
 .square {
   background-color: $primary-color;
   transition: border-radius 0.3s ease;
-  // min-height: 250px;
-  // height: 250px;
 }
 
 .at {

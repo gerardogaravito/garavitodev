@@ -1,19 +1,4 @@
-export const handleScroll = (
-  pivot: string,
-  setTransformValue: (value: React.SetStateAction<number>) => void
-) => {
-  const tvSeguns = document.querySelector(`.${pivot}`);
-  if (tvSeguns) {
-    const { top, height } = tvSeguns.getBoundingClientRect();
-    const centerY = window.innerHeight / 2;
-
-    const newTransformValue = Math.min(
-      12,
-      Math.abs(centerY - (top + height / 2)) / 15
-    );
-    setTransformValue(newTransformValue);
-  }
-};
+import { EnumCardVariants } from '../../cardsInfo';
 
 type CoordsType = React.MutableRefObject<{
   startX: number;
@@ -27,6 +12,21 @@ const toggleScroll = (enableScroll: boolean) => {
     document.body.style.overflow = 'auto';
   } else {
     document.body.style.overflow = 'hidden';
+  }
+};
+
+export const dimensionsController = (variant: EnumCardVariants | undefined) => {
+  // [width, height]
+
+  switch (variant) {
+    case EnumCardVariants.cv:
+      return [124, 156];
+
+    case EnumCardVariants.albumCover:
+      return [200, 200];
+
+    default:
+      return [300, 125];
   }
 };
 
@@ -102,4 +102,13 @@ export const onTouchEnd = (
   coords.current.lastX = card.offsetLeft;
   coords.current.lastY = card.offsetTop;
   toggleScroll(true);
+};
+
+// css unit tranform handlers
+export const vhToPixels = (vh: number) => {
+  return Math.round(window.innerHeight / (100 / vh));
+};
+
+export const vwToPixels = (vw: number) => {
+  return Math.round(window.innerWidth / (100 / vw));
 };

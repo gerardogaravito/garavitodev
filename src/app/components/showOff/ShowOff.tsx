@@ -2,116 +2,25 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './showOff.module.scss';
-import {
-  handleScroll,
-  //   onMouseDown,
-  //   onMouseUp,
-  //   onMouseMove,
-  //   onTouchMove,
-  //   onTouchStart,
-  //   onTouchEnd,
-} from './utils';
+import { handleScroll } from './utils';
 import { Card } from './components';
+import { cardsInfo, cardsInfoType } from './cardsInfo';
 
 const ShowOff: FC = () => {
-  // https://vimeo.com/user25403232
+  // video playing on the TV => https://vimeo.com/user25403232
+  const foregroundRef = useRef<HTMLDivElement>(null);
+
   const [transformValue, setTransformValue] = useState<number>(12);
 
-  const foregroundRef = useRef<HTMLDivElement>(null);
-  // const cardRef = useRef<HTMLDivElement>(null);
-
-  // const isClicked = useRef<boolean>(false);
-
-  // const coords = useRef<{
-  //   startX: number;
-  //   startY: number;
-  //   lastX: number;
-  //   lastY: number;
-  // }>({
-  //   startX: 0,
-  //   startY: 0,
-  //   lastX: 0,
-  //   lastY: 0,
-  // });
-
   useEffect(() => {
-    // background actions
-
     window.addEventListener('scroll', () =>
       handleScroll(styles.tv__seguns, setTransformValue)
     );
 
-    // // foreground actions
-
-    // if (!cardRef.current || !foregroundRef.current) return;
-
-    // const card = cardRef.current;
-    // const foreground = foregroundRef.current;
-
-    // // desktop
-    // card.addEventListener('mousedown', (event) =>
-    //   onMouseDown(isClicked, coords, event)
-    // );
-    // card.addEventListener('mouseup', (event) =>
-    //   onMouseUp(isClicked, coords, card)
-    // );
-    // foreground.addEventListener('mousemove', (event) =>
-    //   onMouseMove(isClicked, coords, card, event)
-    // );
-    // foreground.addEventListener('mouseleave', (event) =>
-    //   onMouseUp(isClicked, coords, card)
-    // );
-
-    // // mobile
-    // card.addEventListener('touchstart', (event) =>
-    //   onTouchStart(isClicked, coords, event)
-    // );
-    // card.addEventListener('touchmove', (event) =>
-    //   onTouchMove(isClicked, coords, card, event)
-    // );
-    // foreground.addEventListener('touchend', () =>
-    //   onTouchEnd(isClicked, coords, card)
-    // );
-    // foreground.addEventListener('touchcancel', () =>
-    //   onTouchEnd(isClicked, coords, card)
-    // );
-
     const cleanup = () => {
-      // background actions
-
       window.removeEventListener('scroll', () =>
         handleScroll(styles.tv__seguns, setTransformValue)
       );
-
-      // foreground actions
-
-      // // dekstop
-      // card.removeEventListener('mousedown', (event) =>
-      //   onMouseDown(isClicked, coords, event)
-      // );
-      // card.removeEventListener('mouseup', (event) =>
-      //   onMouseUp(isClicked, coords, card)
-      // );
-      // foreground.removeEventListener('mousemove', (event) =>
-      //   onMouseMove(isClicked, coords, card, event)
-      // );
-      // foreground.removeEventListener('mouseleave', (event) =>
-      //   onMouseUp(isClicked, coords, card)
-      // );
-
-      // // mobile
-      // card.removeEventListener('touchstart', (event) =>
-      //   onTouchStart(isClicked, coords, event)
-      // );
-      // card.removeEventListener('touchmove', (event) =>
-      //   onTouchMove(isClicked, coords, card, event)
-      // );
-      // foreground.removeEventListener('touchend', () =>
-      //   onTouchEnd(isClicked, coords, card)
-      // );
-      // foreground.removeEventListener('touchcancel', () =>
-      //   onTouchEnd(isClicked, coords, card)
-      // );
     };
 
     return cleanup;
@@ -128,7 +37,9 @@ const ShowOff: FC = () => {
             height={333.33}
             className={styles.tv__primis}
             style={{
-              transform: `translate(-${transformValue}px, -${transformValue}px)`,
+              transform: `translate(-${12 - transformValue}px, -${
+                12 - transformValue
+              }px)`,
             }}
           />
           <Image
@@ -145,15 +56,65 @@ const ShowOff: FC = () => {
             height={333.33}
             className={styles.tv__tercis}
             style={{
-              transform: `translate(${transformValue}px, ${transformValue}px)`,
+              transform: `translate(${12 - transformValue}px, ${
+                12 - transformValue
+              }px)`,
             }}
           />
         </div>
       </section>
       <section ref={foregroundRef} className={styles.foreground}>
-        <Card foregroundRef={foregroundRef} />
-        <Card foregroundRef={foregroundRef} />
-        <Card foregroundRef={foregroundRef} />
+        <div className={styles.dir}>
+          <p className={styles.dir__title}>web developer</p>
+          <a
+            className={styles.dir__item}
+            href='https://github.com/gerardogaravito'
+            target='_blank'
+          >
+            / <span>github</span>
+          </a>
+          <a
+            className={styles.dir__item}
+            href='https://soundcloud.com/garavito666'
+            target='_blank'
+          >
+            / <span>soundcloud</span>
+          </a>
+          <a
+            className={styles.dir__item}
+            href='https://www.instagram.com/garavito666/?hl=es-la'
+            target='_blank'
+          >
+            / <span>instagram</span>
+          </a>
+          <a
+            className={styles.dir__item}
+            href='https://www.last.fm/user/garavito666'
+            target='_blank'
+          >
+            /{' '}
+            <span>
+              last.<span className={styles.dir__item__italic}>fm</span>
+            </span>
+          </a>
+        </div>
+        {cardsInfo.map((item: cardsInfoType, index: number) => {
+          return (
+            <Card
+              foregroundRef={foregroundRef}
+              title={item.title}
+              tabName={item.tabName}
+              dates={item.dates}
+              url={item.url}
+              isFromMiddle={item.isFromMiddle}
+              isFromRight={item.isFromRight}
+              position={item.position}
+              key={item.title}
+              zIndex={index}
+              variant={item.variant}
+            />
+          );
+        })}
       </section>
     </div>
   );

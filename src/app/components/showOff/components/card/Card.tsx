@@ -1,24 +1,38 @@
 import React, { FC, useEffect, useRef } from 'react';
-import styles from '../../showOff.module.scss';
+import styles from './card.module.scss';
+import { ICard } from './card.types';
 import {
-  handleScroll,
   onMouseDown,
   onMouseUp,
   onMouseMove,
   onTouchMove,
   onTouchStart,
   onTouchEnd,
+  vhToPixels,
+  vwToPixels,
+  dimensionsController,
 } from './utils';
+import { AlbumCover, CV } from './variants';
+import { EnumCardVariants } from '../../cardsInfo';
+import Image from 'next/image';
 
-interface ICard {
-  // cardRef: React.RefObject<HTMLDivElement>;
-  foregroundRef: React.RefObject<HTMLDivElement>;
-}
-
-const Card: FC<ICard> = ({ foregroundRef }) => {
+const Card: FC<ICard> = ({
+  foregroundRef,
+  position,
+  isFromRight = false,
+  isFromMiddle = false,
+  title,
+  tabName,
+  dates,
+  url,
+  variant,
+  zIndex,
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
-
   const isClicked = useRef<boolean>(false);
+
+  const CARD_WIDTH = dimensionsController(variant)[0];
+  const CARD_HEIGHT = dimensionsController(variant)[1];
 
   const coords = useRef<{
     startX: number;
@@ -26,15 +40,15 @@ const Card: FC<ICard> = ({ foregroundRef }) => {
     lastX: number;
     lastY: number;
   }>({
-    startX: 0,
-    startY: 0,
-    lastX: 0,
-    lastY: 0,
+    startX: isFromRight
+      ? vwToPixels(100) - position.x - CARD_WIDTH
+      : position.x,
+    startY: Number(vhToPixels(isFromMiddle ? 150 : 100) + position.y),
+    lastX: isFromRight ? vwToPixels(100) - position.x - CARD_WIDTH : position.x,
+    lastY: Number(vhToPixels(isFromMiddle ? 150 : 100) + position.y),
   });
 
   useEffect(() => {
-    // foreground actions
-
     if (!cardRef.current || !foregroundRef.current) return;
 
     const card = cardRef.current;
@@ -101,7 +115,116 @@ const Card: FC<ICard> = ({ foregroundRef }) => {
     return cleanup;
   });
 
-  return <div ref={cardRef} className={styles.card}></div>;
+  switch (variant) {
+    case EnumCardVariants.cv:
+      return (
+        <div
+          ref={cardRef}
+          style={{
+            position: 'absolute',
+            cursor: 'pointer',
+            display: 'grid',
+            gridTemplate: '1 / 1',
+            width: CARD_WIDTH,
+            height: CARD_HEIGHT,
+            ...(isFromRight
+              ? {
+                  top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${
+                    position.y
+                  }px)`,
+                  right: `${position.x}px`,
+                }
+              : {
+                  top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${
+                    position.y
+                  }px)`,
+                  left: `${position.x}px`,
+                }),
+          }}
+        >
+          <div className={styles.cv__container}>
+            <span
+              onClick={() => window.open('/CV_GerardoGaravito.pdf', '_blank')}
+            >
+              cv
+            </span>
+          </div>
+          <CV />
+        </div>
+      );
+
+    case EnumCardVariants.albumCover:
+      return (
+        <div
+          ref={cardRef}
+          style={{
+            position: 'absolute',
+            cursor: 'pointer',
+            display: 'grid',
+            gridTemplate: '1 / 1',
+            width: CARD_WIDTH,
+            height: CARD_HEIGHT,
+            ...(isFromRight
+              ? {
+                  top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${
+                    position.y
+                  }px)`,
+                  right: `${position.x}px`,
+                }
+              : {
+                  top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${
+                    position.y
+                  }px)`,
+                  left: `${position.x}px`,
+                }),
+          }}
+        >
+          <AlbumCover />
+        </div>
+      );
+  }
+
+  return (
+    <div
+      ref={cardRef}
+      className={styles.card}
+      style={{
+        width: CARD_WIDTH,
+        height: CARD_HEIGHT,
+        zIndex: 10 + zIndex,
+        ...(isFromRight
+          ? {
+              top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${
+                position.y
+              }px)`,
+              right: `${position.x}px`,
+            }
+          : {
+              top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${
+                position.y
+              }px)`,
+              left: `${position.x}px`,
+            }),
+      }}
+    >
+      <div className={styles.tab}>
+        {Boolean(tabName) && <p className={styles.tab__text}>{tabName}</p>}
+      </div>
+      <div className={styles.body}>
+        <a target='_blank' href={url} className={styles.body__title}>
+          {title === 'efevoo' ? (
+            <>
+              <span>{title}</span>
+              <span className={styles.body__title__subtitle}> group</span>
+            </>
+          ) : (
+            title
+          )}
+        </a>
+        <p className={styles.body__dates}>{dates}</p>
+      </div>
+    </div>
+  );
 };
 
 export default Card;

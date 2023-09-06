@@ -9,7 +9,8 @@ const Hero: FC = ({}) => {
   const [distance, setDistance] = useState(250);
   const divSize = 250; // Tamaño del div en píxeles
 
-  const borderRadius = (distance / divSize) * 150;
+  // const borderRadius = (distance / divSize) * 150;
+  const borderRadius = (distance / divSize) * 250;
 
   const d = new Date();
 
@@ -45,7 +46,7 @@ const Hero: FC = ({}) => {
             style={{
               height: divSize,
               minHeight: divSize,
-              borderRadius: distance > 50 ? `${borderRadius}%` : '0%',
+              borderRadius: distance < 140 ? `${100 - borderRadius}%` : '0%',
             }}
           />
           <Link
@@ -57,7 +58,7 @@ const Hero: FC = ({}) => {
           </Link>
         </div>
         <div className={styles.texts}>
-          <p className={styles.title}>Gerardo Garavito</p>
+          <p className={styles.title}>gerardo garavito</p>
           <div>
             <p className={styles.engineer}>software engineer</p>
             <p className={styles.mexico}>

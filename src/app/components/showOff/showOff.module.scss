@@ -1,5 +1,3 @@
-@import '../../sass//variables.scss';
-
 .layout {
   width: 100%;
   height: 100vh;
@@ -23,41 +21,58 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dir {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
+  transform: translate(150px, 125px);
+
+  &__title {
+    font-family: 'PP_Mori_Italic';
+    font-size: 24px;
+  }
+
+  &__item {
+    font-family: 'PP_Mori_Light';
+    font-size: 24px;
+
+    &:hover span {
+      text-decoration: underline;
+    }
+
+    &__italic {
+      font-family: 'PP_Mori_Light_Italic';
+    }
+  }
 }
 
 // background stuff
 .tv {
-  width: 250px;
-  height: 333.33px;
   display: grid;
   grid-template: 1fr / 1fr;
   position: relative;
 
   &__primis {
-    opacity: 0.5;
+    opacity: 0.33;
     grid-area: 1 / 1 / 2 / 2;
     z-index: 10;
   }
   &__seguns {
-    opacity: 0.5;
+    opacity: 0.33;
     grid-area: 1 / 1 / 2 / 2;
     z-index: 15;
   }
   &__tercis {
-    opacity: 0.5;
+    opacity: 0.33;
     grid-area: 1 / 1 / 2 / 2;
     z-index: 20;
   }
-}
-
-// foreground stuff
-.card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: hotpink;
-  height: 105px;
-  width: 250px;
-  cursor: pointer;
-  border: 1px solid $white-color;
 }
