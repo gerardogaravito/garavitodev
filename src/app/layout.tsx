@@ -1,51 +1,33 @@
 import './globals.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import localFont from 'next/font/local';
 import { Analytics } from '@vercel/analytics/react';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'garavito666',
-  description: 'gerardo garavito web',
-};
-
-const PP_Mori = localFont({
-  src: [
-    {
-      path: '../../public/fonts/PPMori-Extralight.otf',
-      weight: '200',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/PPMori-ExtralightItalic.otf',
-      weight: '200',
-      style: 'italic',
-    },
-    {
-      path: '../../public/fonts/PPMori-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/PPMori-RegularItalic.otf',
-      weight: '400',
-      style: 'italic',
-    },
-    {
-      path: '../../public/fonts/PPMori-SemiBold.otf',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/PPMori-SemiBoldItalic.otf',
-      weight: '700',
-      style: 'italic',
-    },
+  description: 'gerardo garavito: web developer',
+  applicationName: 'gerardo garavito: web developer',
+  referrer: 'origin-when-cross-origin',
+  keywords: [
+    'gerardo',
+    'garavito',
+    'web',
+    'developer',
+    'software',
+    'engineer',
+    'garavito666',
+    'react',
+    'react-native',
+    'typescript',
   ],
-  variable: '--ppmori',
-});
+  authors: [{ name: 'garavito666' }],
+  colorScheme: 'dark',
+  creator: 'Gerardo Garavito',
+  publisher: 'Gerardo Garavito',
+};
 
 export default function RootLayout({
   children,
@@ -53,7 +35,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={PP_Mori.className}>
+    <html lang='en'>
+      <Head>
+        <meta property='og:title' content='garavito666' />
+        <meta
+          property='og:description'
+          content='gerardo garavito: web developer'
+        />
+        <meta property='og:image' content='/photos/website.png' />
+        <meta property='og:url' content='URL_de_tu_página' />
+        <meta property='og:type' content='website' />
+        {/* TWIITER */}
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@garavito666' />
+        <meta name='twitter:title' content='garavito666' />
+        <meta
+          name='twitter:description'
+          content='gerardo garavito: web developer'
+        />
+        <meta name='twitter:image' content='/photos/website.png' />
+      </Head>
       <body className={inter.className}>
         {children}
         <Analytics />
