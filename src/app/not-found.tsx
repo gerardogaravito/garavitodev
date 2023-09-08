@@ -1,13 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 const NotFoundPage: FC = () => {
   const router = useRouter();
+  const [indexValue, setIndexValue] = useState<number>(0);
+  const [indexLoaded, setIndexLoaded] = useState<boolean>(false);
 
   const imgs: string[] = [
+    'steveo',
     'gummo',
     'me',
     '2001',
@@ -20,20 +23,32 @@ const NotFoundPage: FC = () => {
     'killbill',
     'love',
     'pink_flamingos_',
-    'steveo',
     'strobeck',
     'trump',
   ];
 
   useEffect(() => {
-    setTimeout(() => {
-      router.push('/');
-    }, 1000);
-  }, []);
+    const randomIntFromInterval = () => {
+      return Math.floor(Math.random() * imgs.length);
+    };
 
-  const randomIntFromInterval = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
+    const asignImg = async () => {
+      const indexValue = randomIntFromInterval();
+      setIndexValue(indexValue);
+
+      await Promise.resolve();
+
+      setIndexLoaded(true);
+
+      const timeout = setTimeout(() => {
+        router.push('/');
+      }, 2000);
+
+      return () => clearTimeout(timeout);
+    };
+
+    asignImg();
+  }, []);
 
   return (
     <section
@@ -53,13 +68,15 @@ const NotFoundPage: FC = () => {
           position: 'relative',
         }}
       >
-        <Image
-          src={`/notFoundImg/${imgs[randomIntFromInterval(0, 14)]}.jpg`}
-          alt={`movie:${imgs[randomIntFromInterval(0, 14)]}`}
-          fill
-          style={{ filter: 'grayscale(1)', objectFit: 'cover' }}
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-        />
+        {indexLoaded && (
+          <Image
+            src={`/notFoundImg/${imgs[indexValue]}.jpg`}
+            alt={`movie:${imgs[indexValue ?? 0]}`}
+            fill
+            style={{ filter: 'grayscale(1)', objectFit: 'cover' }}
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          />
+        )}
       </div>
     </section>
   );

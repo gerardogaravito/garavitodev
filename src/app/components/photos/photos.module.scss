@@ -42,6 +42,9 @@
       font-size: 12px;
       font-family: 'PP_Mori_Italic';
 
+      &__url {
+        font-family: 'PP_Mori_Italic';
+      }
       &__url:hover {
         text-decoration: underline;
         cursor: pointer;
