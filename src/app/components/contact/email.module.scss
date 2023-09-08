@@ -9,28 +9,28 @@
 }
 
 .email {
-  font-size: 140px;
-  font-family: 'PP_Mori';
+  font-size: 160px;
   text-align: end;
   margin-right: 12px;
   margin-top: 150px;
   letter-spacing: -8px;
   transition: color 0.2s linear;
+  font-family: 'PP_Mori_Light';
 
   &:hover {
     color: $primary-color;
   }
 
   & span {
-    font-family: 'PP_Mori_Light';
+    font-family: 'PP_Mori';
   }
 
   @media (max-width: $big) {
-    font-size: 100px;
+    font-size: 124px;
   }
 
   @media (max-width: $medium) {
-    font-size: 46px;
+    font-size: 64px;
     letter-spacing: -4px;
   }
 

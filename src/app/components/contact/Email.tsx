@@ -4,10 +4,10 @@ import styles from './email.module.scss';
 const Email: FC = () => {
   return (
     <section className={styles.container}>
-      <a className={styles.email} href='mailto:garavitogerardo@gmail.com'>
-        garavitogerardo
+      <a className={styles.email} href='mailto:contact@garavito.dev'>
+        contact
         <br />
-        <span>@gmail.com</span>
+        <span>@garavito.dev</span>
       </a>
     </section>
   );
