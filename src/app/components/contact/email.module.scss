@@ -15,14 +15,15 @@
   margin-top: 150px;
   letter-spacing: -8px;
   transition: color 0.2s linear;
-  font-family: 'PP_Mori_Light';
+  font-family: 'PP_Mori_Light', Helvetica, sans-serif;
+  font-weight: lighter;
 
   &:hover {
     color: $primary-color;
   }
 
   & span {
-    font-family: 'PP_Mori';
+    font-family: 'PP_Mori', Helvetica, sans-serif;
   }
 
   @media (max-width: $big) {

@@ -26,7 +26,7 @@
   &__text {
     font-size: 12px;
     color: $white-color;
-    font-family: 'PP_Mori';
+    font-family: 'PP_Mori', Helvetica, sans-serif;
     margin-right: 8px;
 
     @media (max-width: $medium) {
@@ -47,7 +47,8 @@
   }
 
   &__title {
-    font-family: 'PP_Mori_Light';
+    font-family: 'PP_Mori_Light', Helvetica, sans-serif;
+    font-weight: lighter;
     font-size: 24px;
     transition: text-decoration 0.4s;
     user-select: none;
@@ -61,7 +62,9 @@
     }
 
     &__subtitle {
-      font-family: 'PP_Mori_Light_Italic';
+      font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+      font-style: italic;
+      font-weight: lighter;
       font-size: 12px;
 
       @media (max-width: $medium) {
@@ -70,7 +73,8 @@
     }
   }
   &__dates {
-    font-family: 'PP_Mori_Italic';
+    font-family: 'PP_Mori_Italic', Helvetica, sans-serif;
+    font-style: italic;
     font-size: 12px;
 
     @media (max-width: $medium) {
@@ -90,7 +94,8 @@
   }
 
   & span {
-    font-family: 'PP_Mori_Light';
+    font-family: 'PP_Mori_Light', Helvetica, sans-serif;
+    font-weight: lighter;
     margin-bottom: 24px;
     margin-left: 16px;
     line-height: 14px;
@@ -126,7 +131,7 @@
   }
 
   & span {
-    font-family: 'PP_Mori';
+    font-family: 'PP_Mori', Helvetica, sans-serif;
     color: #0c1f87;
     font-size: 82px;
     margin-bottom: -35px;
@@ -140,7 +145,10 @@
   & p {
     color: #0d2193;
     font-size: 49px;
-    font-family: 'PP_Mori_Light_Italic';
+    font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+
     &:hover {
       text-decoration: underline;
       cursor: pointer;

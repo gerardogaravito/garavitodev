@@ -29,10 +29,10 @@ const Card: FC<ICard> = ({
   zIndex,
   zIndexMutableList,
   setZIndexMutableList,
+  isTouch,
 }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [zIndexValue, setZIndexValue] = useState<number>(zIndex);
-  const [isTouch, setIsTouch] = useState<boolean>(false);
 
   const cardRef = useRef<HTMLDivElement>(null);
   const isClicked = useRef<boolean>(false);
@@ -53,10 +53,6 @@ const Card: FC<ICard> = ({
     lastX: isFromRight ? vwToPixels(100) - position.x - CARD_WIDTH : position.x,
     lastY: Number(vhToPixels(isFromMiddle ? 150 : 100) + position.y),
   });
-
-  if ('ontouchstart' in window) {
-    setIsTouch(true);
-  }
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
@@ -142,7 +138,7 @@ const Card: FC<ICard> = ({
   }, [title, zIndexMutableList]);
 
   const handleMouseDown = () => {
-    // if (isTouch) return;
+    if (isTouch) return;
 
     setZIndexMutableList(
       zIndexMutableList.map((item: zIndexMutaleListType) => {
@@ -174,7 +170,7 @@ const Card: FC<ICard> = ({
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
           style={{
-            position: isTouch ? 'fixed' : 'absolute',
+            position: 'absolute',
             cursor: 'pointer',
             display: 'grid',
             gridTemplate: '1 / 1',
@@ -212,7 +208,7 @@ const Card: FC<ICard> = ({
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
           style={{
-            position: isTouch ? 'fixed' : 'absolute',
+            position: 'absolute',
             cursor: 'pointer',
             display: 'grid',
             gridTemplate: '1 / 1',
@@ -246,6 +242,7 @@ const Card: FC<ICard> = ({
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
       style={{
+        position: 'absolute',
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
         zIndex: zIndexValue,

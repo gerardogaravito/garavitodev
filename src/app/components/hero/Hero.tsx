@@ -5,9 +5,14 @@ import Link from 'next/link';
 import styles from './hero.module.scss';
 import { handleMouseMove, validate420 } from './utils';
 
-const Hero: FC = ({}) => {
+interface IHero {
+  isTouch: boolean;
+}
+
+const Hero: FC<IHero> = ({ isTouch }) => {
   const [distance, setDistance] = useState(250);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, _] = useState(window.innerHeight);
   const divSize = windowWidth <= 390 ? 125 : windowWidth <= 768 ? 175 : 250; // Tamaño del div en píxeles
 
   const handleResize = () => {
@@ -22,7 +27,6 @@ const Hero: FC = ({}) => {
     };
   }, []);
 
-  // const borderRadius = (distance / divSize) * 150;
   const borderRadius = (distance / divSize) * 250;
 
   const d = new Date();
@@ -48,6 +52,7 @@ const Hero: FC = ({}) => {
   return (
     <section
       className={styles.container}
+      style={{ height: isTouch ? windowHeight : '100vh' }}
       onMouseMove={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
         handleMouseMove(event, setDistance)
       }

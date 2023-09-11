@@ -2,14 +2,12 @@
 
 .layout {
   width: 100%;
-  height: 100vh;
   display: grid;
   grid-template: 1fr / 1fr;
 }
 
 .background {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +19,6 @@
   grid-area: 1 / 1 / 2 / 2;
   z-index: 3;
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -46,7 +43,8 @@
   }
 
   &__title {
-    font-family: 'PP_Mori_Italic';
+    font-family: 'PP_Mori_Italic', Helvetica, sans-serif;
+    font-style: italic;
     font-size: 24px;
 
     @media (max-width: $medium) {
@@ -59,7 +57,8 @@
   }
 
   &__item {
-    font-family: 'PP_Mori_Light';
+    font-family: 'PP_Mori_Light', Helvetica, sans-serif;
+    font-weight: lighter;
     font-size: 24px;
 
     @media (max-width: $medium) {
@@ -75,7 +74,9 @@
     }
 
     &__italic {
-      font-family: 'PP_Mori_Light_Italic';
+      font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+      font-style: italic;
+      font-weight: lighter;
     }
   }
 }

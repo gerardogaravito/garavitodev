@@ -16,4 +16,5 @@ export interface ICard {
   setZIndexMutableList: React.Dispatch<
     React.SetStateAction<zIndexMutaleListType[]>
   >;
+  isTouch: boolean;
 }

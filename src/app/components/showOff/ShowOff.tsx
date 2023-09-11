@@ -10,13 +10,18 @@ import {
 import { Card } from './components';
 import { cardsInfo, cardsInfoType } from './cardsInfo';
 
-const ShowOff: FC = () => {
+interface IShowOff {
+  isTouch: boolean;
+}
+
+const ShowOff: FC<IShowOff> = ({ isTouch }) => {
   // video playing on the TV => https://vimeo.com/user25403232
   const foregroundRef = useRef<HTMLDivElement>(null);
 
   const [transformValue, setTransformValue] = useState<number>(12);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, _] = useState(window.innerHeight * 1.15);
 
   const [zIndexMutableList, setZIndexMutableList] = useState<
     zIndexMutaleListType[]
@@ -43,8 +48,14 @@ const ShowOff: FC = () => {
   }, []);
 
   return (
-    <div className={styles.layout}>
-      <section className={styles.background}>
+    <div
+      className={styles.layout}
+      style={{ height: isTouch ? windowHeight : '100vh' }}
+    >
+      <section
+        className={styles.background}
+        style={{ height: isTouch ? windowHeight : '100vh' }}
+      >
         <div className={styles.tv}>
           <Image
             src={'/photos/chicago_tv.jpg'}
@@ -85,7 +96,11 @@ const ShowOff: FC = () => {
           />
         </div>
       </section>
-      <section ref={foregroundRef} className={styles.foreground}>
+      <section
+        ref={foregroundRef}
+        className={styles.foreground}
+        style={{ height: isTouch ? windowHeight : '100vh' }}
+      >
         <div className={styles.dir}>
           <p className={styles.dir__title}>web developer</p>
           <a
@@ -138,6 +153,7 @@ const ShowOff: FC = () => {
               variant={item.variant}
               zIndexMutableList={zIndexMutableList}
               setZIndexMutableList={setZIndexMutableList}
+              isTouch={isTouch}
             />
           );
         })}

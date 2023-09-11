@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 import dynamic from 'next/dynamic';
 
@@ -18,20 +17,23 @@ const Email = dynamic(() => import('./components/contact/Email'), {
 
 function Home() {
   const [heroRendered, setHeroRendered] = useState(false);
-  const router = useRouter();
+  const [isTouch, setIsTouch] = useState<boolean>(false);
 
   useEffect(() => {
-    // router.push('/');
+    if ('ontouchstart' in window) {
+      setIsTouch(true);
+    }
+
     setHeroRendered(true);
   }, []);
 
   return (
     <main className={styles.main}>
-      <Hero />
+      <Hero isTouch={isTouch} />
       {heroRendered && (
         <>
-          <ShowOff />
-          <Photos />
+          <ShowOff isTouch={isTouch} />
+          <Photos isTouch={isTouch} />
           <Email />
         </>
       )}

@@ -2,7 +2,6 @@
 
 .container {
   width: 100%;
-  height: 100vh;
   margin-top: 150px;
   display: grid;
   grid-template-rows: 50% 15% 35%;
@@ -36,7 +35,8 @@
 
     &__p {
       font-size: 12px;
-      font-family: 'PP_Mori_Semibold';
+      font-family: 'PP_Mori_Semibold', Helvetica, sans-serif;
+      font-weight: 500;
 
       @media (max-width: $medium) {
         font-size: 8px;
@@ -44,14 +44,16 @@
     }
     &__span {
       font-size: 12px;
-      font-family: 'PP_Mori_Italic';
+      font-family: 'PP_Mori_Italic', Helvetica, sans-serif;
+      font-style: italic;
 
       @media (max-width: $medium) {
         font-size: 8px;
       }
 
       &__url {
-        font-family: 'PP_Mori_Italic';
+        font-family: 'PP_Mori_Italic', Helvetica, sans-serif;
+        font-style: italic;
       }
       &__url:hover {
         text-decoration: underline;

@@ -4,8 +4,13 @@ import styles from './photos.module.scss';
 import Image from 'next/image';
 import { photosInfo } from './utils';
 
-const Photos: FC = () => {
+interface IPhotos {
+  isTouch: boolean;
+}
+
+const Photos: FC<IPhotos> = ({ isTouch }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, _] = useState(window.innerHeight);
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
@@ -22,7 +27,10 @@ const Photos: FC = () => {
   const isSmall = windowWidth < 1020;
 
   return (
-    <section className={styles.container}>
+    <section
+      className={styles.container}
+      style={{ height: isTouch ? windowHeight : '100vh' }}
+    >
       {photosInfo.map((photo) => (
         <div
           key={photo.src}

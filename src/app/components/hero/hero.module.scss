@@ -1,7 +1,6 @@
 @import '../../sass/variables.scss';
 
 .container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +47,9 @@
 
 .at {
   font-size: 14px;
-  font-family: 'PP_Mori_Light_Italic';
+  font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: lighter;
   transition: color 0.3s;
 
   &:hover {
@@ -56,7 +57,7 @@
   }
 
   @media (max-width: $medium) {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -92,7 +93,8 @@
 
 .title {
   font-size: 36px;
-  font-family: 'PP_Mori_Semibold';
+  font-family: 'PP_Mori_Semibold', Helvetica, sans-serif;
+  font-weight: 500;
 
   @media (max-width: $medium) {
     font-size: 26px;
@@ -104,7 +106,9 @@
 }
 
 .engineer {
-  font-family: 'PP_Mori_Light_Italic';
+  font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: lighter;
   font-size: 24px;
 
   @media (max-width: $medium) {
@@ -116,7 +120,8 @@
   }
 }
 .mexico {
-  font-family: 'PP_Mori_Italic';
+  font-family: 'PP_Mori_Italic', Helvetica, sans-serif;
+  font-style: italic;
   font-size: 22px;
 
   @media (max-width: $medium) {
@@ -127,8 +132,10 @@
     font-size: 10px;
   }
 }
+
 .letter_e {
-  font-family: 'PP_Mori';
+  font-family: 'PP_Mori', Helvetica, sans-serif;
+  font-style: normal;
 }
 
 .clock {
@@ -139,7 +146,8 @@
   min-width: 175px;
 
   &__numbers {
-    font-family: 'PP_Mori_Light';
+    font-family: 'PP_Mori_Light', Helvetica, sans-serif;
+    font-weight: lighter;
   }
 
   &__divider {
