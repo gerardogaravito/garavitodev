@@ -1,3 +1,5 @@
+import { cardsInfoType } from './cardsInfo';
+
 export const handleScroll = (
   pivot: string,
   setTransformValue: (value: React.SetStateAction<number>) => void
@@ -13,4 +15,13 @@ export const handleScroll = (
     );
     setTransformValue(newTransformValue);
   }
+};
+
+export type zIndexMutaleListType = { title: string; zIndex: number };
+
+export const createZIndexMutableList = (cardsInfo: cardsInfoType[]) => {
+  return cardsInfo.map((item: cardsInfoType, index: number) => ({
+    title: item.title,
+    zIndex: index,
+  }));
 };

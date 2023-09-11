@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import styles from './card.module.scss';
 import { ICard } from './card.types';
 import {
@@ -14,7 +14,7 @@ import {
 } from './utils';
 import { AlbumCover, CV } from './variants';
 import { EnumCardVariants } from '../../cardsInfo';
-import Image from 'next/image';
+import { zIndexMutaleListType } from '../../utils';
 
 const Card: FC<ICard> = ({
   foregroundRef,
@@ -27,6 +27,8 @@ const Card: FC<ICard> = ({
   url,
   variant,
   zIndex,
+  zIndexMutableList,
+  setZIndexMutableList,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isClicked = useRef<boolean>(false);
@@ -48,6 +50,8 @@ const Card: FC<ICard> = ({
     lastY: Number(vhToPixels(isFromMiddle ? 150 : 100) + position.y),
   });
 
+  const [zIndexValue, setZIndexValue] = useState<number>(zIndex);
+
   useEffect(() => {
     if (!cardRef.current || !foregroundRef.current) return;
 
@@ -58,13 +62,11 @@ const Card: FC<ICard> = ({
     card.addEventListener('mousedown', (event) =>
       onMouseDown(isClicked, coords, event)
     );
-    card.addEventListener('mouseup', (event) =>
-      onMouseUp(isClicked, coords, card)
-    );
+    card.addEventListener('mouseup', (_) => onMouseUp(isClicked, coords, card));
     foreground.addEventListener('mousemove', (event) =>
       onMouseMove(isClicked, coords, card, event)
     );
-    foreground.addEventListener('mouseleave', (event) =>
+    foreground.addEventListener('mouseleave', (_) =>
       onMouseUp(isClicked, coords, card)
     );
 
@@ -115,11 +117,42 @@ const Card: FC<ICard> = ({
     return cleanup;
   });
 
+  useEffect(() => {
+    setZIndexValue(
+      zIndexMutableList.find((ele) => ele.title === title)!.zIndex
+    );
+  }, [title, zIndexMutableList]);
+
+  const handleMouseDown = () => {
+    setZIndexMutableList(
+      zIndexMutableList.map((item: zIndexMutaleListType) => {
+        if (item.title == title) {
+          return {
+            title: item.title,
+            zIndex:
+              zIndexMutableList.reduce((elementoMaximo, elementoActual) => {
+                return elementoActual.zIndex > elementoMaximo.zIndex
+                  ? elementoActual
+                  : elementoMaximo;
+              }, zIndexMutableList[0]).zIndex + 1,
+          };
+        }
+
+        return {
+          title: item.title,
+          zIndex: item.zIndex,
+        };
+      })
+    );
+  };
+
   switch (variant) {
     case EnumCardVariants.cv:
       return (
         <div
           ref={cardRef}
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleMouseDown}
           style={{
             position: 'absolute',
             cursor: 'pointer',
@@ -127,6 +160,7 @@ const Card: FC<ICard> = ({
             gridTemplate: '1 / 1',
             width: CARD_WIDTH,
             height: CARD_HEIGHT,
+            zIndex: zIndexValue,
             ...(isFromRight
               ? {
                   top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${
@@ -143,9 +177,7 @@ const Card: FC<ICard> = ({
           }}
         >
           <div className={styles.cv__container}>
-            <span
-              onClick={() => window.open('/CV_GerardoGaravito.pdf', '_blank')}
-            >
+            <span onClick={() => window.open('/CV_garavito.pdf', '_blank')}>
               cv
             </span>
           </div>
@@ -157,6 +189,8 @@ const Card: FC<ICard> = ({
       return (
         <div
           ref={cardRef}
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleMouseDown}
           style={{
             position: 'absolute',
             cursor: 'pointer',
@@ -164,6 +198,7 @@ const Card: FC<ICard> = ({
             gridTemplate: '1 / 1',
             width: CARD_WIDTH,
             height: CARD_HEIGHT,
+            zIndex: zIndexValue,
             ...(isFromRight
               ? {
                   top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${
@@ -188,10 +223,13 @@ const Card: FC<ICard> = ({
     <div
       ref={cardRef}
       className={styles.card}
+      onMouseDown={handleMouseDown}
+      onTouchStart={handleMouseDown}
       style={{
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
-        zIndex: 10 + zIndex,
+        // zIndex: 10 + zIndex,
+        zIndex: zIndexValue,
         ...(isFromRight
           ? {
               top: `calc(${vhToPixels(isFromMiddle ? 150 : 100)}px + ${

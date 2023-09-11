@@ -1,4 +1,5 @@
 import { EnumCardVariants } from '../../cardsInfo';
+import { zIndexMutaleListType } from '../../utils';
 
 export interface ICard {
   foregroundRef: React.RefObject<HTMLDivElement>;
@@ -11,4 +12,8 @@ export interface ICard {
   url: string;
   variant?: EnumCardVariants;
   zIndex: number;
+  zIndexMutableList: zIndexMutaleListType[];
+  setZIndexMutableList: React.Dispatch<
+    React.SetStateAction<zIndexMutaleListType[]>
+  >;
 }

@@ -2,7 +2,11 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './showOff.module.scss';
-import { handleScroll } from './utils';
+import {
+  handleScroll,
+  createZIndexMutableList,
+  zIndexMutaleListType,
+} from './utils';
 import { Card } from './components';
 import { cardsInfo, cardsInfoType } from './cardsInfo';
 
@@ -11,6 +15,10 @@ const ShowOff: FC = () => {
   const foregroundRef = useRef<HTMLDivElement>(null);
 
   const [transformValue, setTransformValue] = useState<number>(12);
+
+  const [zIndexMutableList, setZIndexMutableList] = useState<
+    zIndexMutaleListType[]
+  >(createZIndexMutableList(cardsInfo));
 
   useEffect(() => {
     window.addEventListener('scroll', () =>
@@ -112,6 +120,8 @@ const ShowOff: FC = () => {
               key={item.title}
               zIndex={index}
               variant={item.variant}
+              zIndexMutableList={zIndexMutableList}
+              setZIndexMutableList={setZIndexMutableList}
             />
           );
         })}
