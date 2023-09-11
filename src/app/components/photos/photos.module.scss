@@ -37,10 +37,18 @@
     &__p {
       font-size: 12px;
       font-family: 'PP_Mori_Semibold';
+
+      @media (max-width: $medium) {
+        font-size: 8px;
+      }
     }
     &__span {
       font-size: 12px;
       font-family: 'PP_Mori_Italic';
+
+      @media (max-width: $medium) {
+        font-size: 8px;
+      }
 
       &__url {
         font-family: 'PP_Mori_Italic';

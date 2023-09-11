@@ -16,19 +16,27 @@ const ShowOff: FC = () => {
 
   const [transformValue, setTransformValue] = useState<number>(12);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   const [zIndexMutableList, setZIndexMutableList] = useState<
     zIndexMutaleListType[]
   >(createZIndexMutableList(cardsInfo));
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', () =>
       handleScroll(styles.tv__seguns, setTransformValue)
     );
+    window.addEventListener('resize', handleResize);
 
     const cleanup = () => {
       window.removeEventListener('scroll', () =>
         handleScroll(styles.tv__seguns, setTransformValue)
       );
+      window.removeEventListener('resize', handleResize);
     };
 
     return cleanup;
@@ -41,8 +49,10 @@ const ShowOff: FC = () => {
           <Image
             src={'/photos/chicago_tv.jpg'}
             alt='tv exposed at the Museum of Contemporary Art of Chicago, playing her video titled Vieja Gloria 2003'
-            width={250}
-            height={333.33}
+            width={windowWidth <= 390 ? 125 : windowWidth <= 768 ? 175 : 250}
+            height={
+              windowWidth <= 390 ? 166.67 : windowWidth <= 768 ? 233.33 : 333.33
+            }
             className={styles.tv__primis}
             style={{
               transform: `translate(-${12 - transformValue}px, -${
@@ -53,15 +63,19 @@ const ShowOff: FC = () => {
           <Image
             src={'/photos/chicago_tv.jpg'}
             alt='tv exposed at the Museum of Contemporary Art of Chicago, playing her video titled Vieja Gloria 2003'
-            width={250}
-            height={333.33}
+            width={windowWidth <= 390 ? 125 : windowWidth <= 768 ? 175 : 250}
+            height={
+              windowWidth <= 390 ? 166.67 : windowWidth <= 768 ? 233.33 : 333.33
+            }
             className={styles.tv__seguns}
           />
           <Image
             src={'/photos/chicago_tv.jpg'}
             alt='tv exposed at the Museum of Contemporary Art of Chicago, playing her video titled Vieja Gloria 2003'
-            width={250}
-            height={333.33}
+            width={windowWidth <= 390 ? 125 : windowWidth <= 768 ? 175 : 250}
+            height={
+              windowWidth <= 390 ? 166.67 : windowWidth <= 768 ? 233.33 : 333.33
+            }
             className={styles.tv__tercis}
             style={{
               transform: `translate(${12 - transformValue}px, ${
@@ -116,7 +130,9 @@ const ShowOff: FC = () => {
               url={item.url}
               isFromMiddle={item.isFromMiddle}
               isFromRight={item.isFromRight}
-              position={item.position}
+              position={
+                windowWidth <= 768 ? item.position.mobile : item.position.normal
+              }
               key={item.title}
               zIndex={index}
               variant={item.variant}

@@ -10,7 +10,10 @@ export type cardsInfoType = {
   url: string;
   isFromRight: boolean;
   isFromMiddle: boolean;
-  position: { x: number; y: number };
+  position: {
+    normal: { x: number; y: number };
+    mobile: { x: number; y: number };
+  };
   variant?: EnumCardVariants;
 };
 
@@ -23,7 +26,10 @@ export const cardsInfo: cardsInfoType[] = [
     url: 'https://gggraph.garavito.dev/',
     isFromRight: false,
     isFromMiddle: false,
-    position: { x: 150, y: 100 },
+    position: {
+      normal: { x: 150, y: 100 },
+      mobile: { x: 24, y: 0 },
+    },
   },
   //vitau
   {
@@ -33,7 +39,10 @@ export const cardsInfo: cardsInfoType[] = [
     url: 'https://apps.apple.com/mx/app/vitau-farmacia-digital/id1560696284',
     isFromRight: false,
     isFromMiddle: true,
-    position: { x: 124, y: 24 },
+    position: {
+      normal: { x: 124, y: 24 },
+      mobile: { x: 32, y: 136 },
+    },
   },
   {
     title: 'vita-mobile-ui',
@@ -42,7 +51,10 @@ export const cardsInfo: cardsInfoType[] = [
     url: 'https://www.npmjs.com/package/vita-mobile-ui?activeTab=readme',
     isFromRight: false,
     isFromMiddle: true,
-    position: { x: 112, y: 12 },
+    position: {
+      normal: { x: 112, y: 12 },
+      mobile: { x: 20, y: 104 },
+    },
   },
   {
     title: 'vitau',
@@ -51,7 +63,10 @@ export const cardsInfo: cardsInfoType[] = [
     url: 'https://vitau.mx/',
     isFromRight: false,
     isFromMiddle: true,
-    position: { x: 100, y: 0 },
+    position: {
+      normal: { x: 100, y: 0 },
+      mobile: { x: 8, y: 72 },
+    },
   },
   // efevoo group
   {
@@ -61,7 +76,10 @@ export const cardsInfo: cardsInfoType[] = [
     url: 'https://wirebit.com/',
     isFromRight: true,
     isFromMiddle: true,
-    position: { x: 138, y: 212 },
+    position: {
+      normal: { x: 138, y: 212 },
+      mobile: { x: 6, y: 268 },
+    },
   },
   {
     title: 'efevoo',
@@ -70,7 +88,10 @@ export const cardsInfo: cardsInfoType[] = [
     url: 'https://efevoopay.com/',
     isFromRight: true,
     isFromMiddle: true,
-    position: { x: 150, y: 200 },
+    position: {
+      normal: { x: 150, y: 200 },
+      mobile: { x: 18, y: 236 },
+    },
   },
   // CV
   {
@@ -80,7 +101,10 @@ export const cardsInfo: cardsInfoType[] = [
     url: '',
     isFromRight: false,
     isFromMiddle: true,
-    position: { x: 450, y: 200 },
+    position: {
+      normal: { x: 450, y: 200 },
+      mobile: { x: 25, y: 275 },
+    },
     variant: EnumCardVariants.cv,
   },
   // album cover
@@ -91,7 +115,10 @@ export const cardsInfo: cardsInfoType[] = [
     url: '',
     isFromRight: true,
     isFromMiddle: false,
-    position: { x: 175, y: 50 },
+    position: {
+      normal: { x: 175, y: 50 },
+      mobile: { x: 24, y: 48 },
+    },
     variant: EnumCardVariants.albumCover,
   },
   // Platzi
@@ -102,6 +129,9 @@ export const cardsInfo: cardsInfoType[] = [
     url: 'https://www.youtube.com/watch?v=eVRFnytvDHE&t=1s',
     isFromRight: true,
     isFromMiddle: true,
-    position: { x: 50, y: -50 },
+    position: {
+      normal: { x: 50, y: -50 },
+      mobile: { x: 150, y: -125 },
+    },
   },
 ];

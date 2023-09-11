@@ -1,13 +1,26 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
-import React, { useState, FC } from 'react';
+import React, { useState, FC, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './hero.module.scss';
 import { handleMouseMove, validate420 } from './utils';
 
 const Hero: FC = ({}) => {
   const [distance, setDistance] = useState(250);
-  const divSize = 250; // Tamaño del div en píxeles
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const divSize = windowWidth <= 390 ? 125 : windowWidth <= 768 ? 175 : 250; // Tamaño del div en píxeles
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // const borderRadius = (distance / divSize) * 150;
   const borderRadius = (distance / divSize) * 250;

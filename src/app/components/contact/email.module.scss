@@ -30,11 +30,14 @@
   }
 
   @media (max-width: $medium) {
-    font-size: 64px;
+    font-size: 58px;
     letter-spacing: -4px;
   }
 
   @media (max-width: $small) {
-    font-size: 10px;
+    font-size: 34px;
+    margin-top: 80px;
+
+    letter-spacing: 0px;
   }
 }

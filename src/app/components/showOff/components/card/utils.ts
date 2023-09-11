@@ -15,8 +15,24 @@ const toggleScroll = (enableScroll: boolean) => {
   }
 };
 
-export const dimensionsController = (variant: EnumCardVariants | undefined) => {
-  // [width, height]
+export const dimensionsController = (
+  variant: EnumCardVariants | undefined,
+  windowWidth: number
+) => {
+  // [width, height] 768
+
+  if (windowWidth < 768) {
+    switch (variant) {
+      case EnumCardVariants.cv:
+        return [85, 100];
+
+      case EnumCardVariants.albumCover:
+        return [100, 100];
+
+      default:
+        return [200, 75];
+    }
+  }
 
   switch (variant) {
     case EnumCardVariants.cv:

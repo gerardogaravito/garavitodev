@@ -30,11 +30,15 @@ const Card: FC<ICard> = ({
   zIndexMutableList,
   setZIndexMutableList,
 }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [zIndexValue, setZIndexValue] = useState<number>(zIndex);
+  const [isTouch, setIsTouch] = useState<boolean>(false);
+
   const cardRef = useRef<HTMLDivElement>(null);
   const isClicked = useRef<boolean>(false);
 
-  const CARD_WIDTH = dimensionsController(variant)[0];
-  const CARD_HEIGHT = dimensionsController(variant)[1];
+  const CARD_WIDTH = dimensionsController(variant, windowWidth)[0];
+  const CARD_HEIGHT = dimensionsController(variant, windowWidth)[1];
 
   const coords = useRef<{
     startX: number;
@@ -50,7 +54,21 @@ const Card: FC<ICard> = ({
     lastY: Number(vhToPixels(isFromMiddle ? 150 : 100) + position.y),
   });
 
-  const [zIndexValue, setZIndexValue] = useState<number>(zIndex);
+  if ('ontouchstart' in window) {
+    setIsTouch(true);
+  }
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (!cardRef.current || !foregroundRef.current) return;
@@ -71,18 +89,18 @@ const Card: FC<ICard> = ({
     );
 
     // mobile
-    card.addEventListener('touchstart', (event) =>
-      onTouchStart(isClicked, coords, event)
-    );
-    card.addEventListener('touchmove', (event) =>
-      onTouchMove(isClicked, coords, card, event)
-    );
-    foreground.addEventListener('touchend', () =>
-      onTouchEnd(isClicked, coords, card)
-    );
-    foreground.addEventListener('touchcancel', () =>
-      onTouchEnd(isClicked, coords, card)
-    );
+    // card.addEventListener('touchstart', (event) =>
+    //   onTouchStart(isClicked, coords, event)
+    // );
+    // card.addEventListener('touchmove', (event) =>
+    //   onTouchMove(isClicked, coords, card, event)
+    // );
+    // foreground.addEventListener('touchend', () =>
+    //   onTouchEnd(isClicked, coords, card)
+    // );
+    // foreground.addEventListener('touchcancel', () =>
+    //   onTouchEnd(isClicked, coords, card)
+    // );
 
     const cleanup = () => {
       // dekstop
@@ -100,18 +118,18 @@ const Card: FC<ICard> = ({
       );
 
       // mobile
-      card.removeEventListener('touchstart', (event) =>
-        onTouchStart(isClicked, coords, event)
-      );
-      card.removeEventListener('touchmove', (event) =>
-        onTouchMove(isClicked, coords, card, event)
-      );
-      foreground.removeEventListener('touchend', () =>
-        onTouchEnd(isClicked, coords, card)
-      );
-      foreground.removeEventListener('touchcancel', () =>
-        onTouchEnd(isClicked, coords, card)
-      );
+      // card.removeEventListener('touchstart', (event) =>
+      //   onTouchStart(isClicked, coords, event)
+      // );
+      // card.removeEventListener('touchmove', (event) =>
+      //   onTouchMove(isClicked, coords, card, event)
+      // );
+      // foreground.removeEventListener('touchend', () =>
+      //   onTouchEnd(isClicked, coords, card)
+      // );
+      // foreground.removeEventListener('touchcancel', () =>
+      //   onTouchEnd(isClicked, coords, card)
+      // );
     };
 
     return cleanup;
@@ -124,6 +142,8 @@ const Card: FC<ICard> = ({
   }, [title, zIndexMutableList]);
 
   const handleMouseDown = () => {
+    // if (isTouch) return;
+
     setZIndexMutableList(
       zIndexMutableList.map((item: zIndexMutaleListType) => {
         if (item.title == title) {
@@ -154,7 +174,7 @@ const Card: FC<ICard> = ({
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
           style={{
-            position: 'absolute',
+            position: isTouch ? 'fixed' : 'absolute',
             cursor: 'pointer',
             display: 'grid',
             gridTemplate: '1 / 1',
@@ -192,7 +212,7 @@ const Card: FC<ICard> = ({
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
           style={{
-            position: 'absolute',
+            position: isTouch ? 'fixed' : 'absolute',
             cursor: 'pointer',
             display: 'grid',
             gridTemplate: '1 / 1',
@@ -228,7 +248,6 @@ const Card: FC<ICard> = ({
       style={{
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
-        // zIndex: 10 + zIndex,
         zIndex: zIndexValue,
         ...(isFromRight
           ? {

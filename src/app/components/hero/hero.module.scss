@@ -13,6 +13,14 @@
   justify-content: flex-start;
   width: 500px;
   z-index: 20;
+
+  @media (max-width: $medium) {
+    width: 350px;
+  }
+
+  @media (max-width: $small) {
+    width: 250px;
+  }
 }
 
 .left {
@@ -21,6 +29,16 @@
   min-width: 250px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: $medium) {
+    min-width: 175px;
+    height: 175px;
+  }
+
+  @media (max-width: $small) {
+    min-width: 125px;
+    height: 125px;
+  }
 }
 
 .square {
@@ -36,6 +54,10 @@
   &:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: $medium) {
+    font-size: 12px;
+  }
 }
 
 .texts {
@@ -48,21 +70,62 @@
   padding-bottom: 36px;
   padding-top: 96px;
   height: 250px;
+
+  @media (max-width: $medium) {
+    min-width: 175px;
+    height: 175px;
+
+    margin-left: -53px;
+    padding-bottom: 22px;
+    padding-top: 70px;
+  }
+
+  @media (max-width: $small) {
+    min-width: 125px;
+    height: 125px;
+
+    margin-left: -36px;
+    padding-bottom: 20px;
+    padding-top: 50px;
+  }
 }
 
 .title {
   font-size: 36px;
   font-family: 'PP_Mori_Semibold';
-  font-weight: 100;
+
+  @media (max-width: $medium) {
+    font-size: 26px;
+  }
+
+  @media (max-width: $small) {
+    font-size: 18px;
+  }
 }
 
 .engineer {
   font-family: 'PP_Mori_Light_Italic';
   font-size: 24px;
+
+  @media (max-width: $medium) {
+    font-size: 18px;
+  }
+
+  @media (max-width: $small) {
+    font-size: 12px;
+  }
 }
 .mexico {
   font-family: 'PP_Mori_Italic';
   font-size: 22px;
+
+  @media (max-width: $medium) {
+    font-size: 16px;
+  }
+
+  @media (max-width: $small) {
+    font-size: 10px;
+  }
 }
 .letter_e {
   font-family: 'PP_Mori';
@@ -81,6 +144,20 @@
 
   &__divider {
     animation: blink 1s infinite;
+  }
+
+  @media (max-width: $medium) {
+    right: 8px;
+    top: 8px;
+    font-size: 18px;
+    min-width: 125px;
+  }
+
+  @media (max-width: $small) {
+    right: 4px;
+    top: 4px;
+    font-size: 14px;
+    min-width: 95px;
   }
 }
 

@@ -13,7 +13,15 @@ const AlbumCover: FC<IAlbumCover> = () => {
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
   useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
     fetch('/api')
       .then((res) => res.json())
       .then(({ data }) => {
@@ -26,7 +34,10 @@ const AlbumCover: FC<IAlbumCover> = () => {
       setCurrentIndex((prev: number) => (prev >= 20 ? 0 : prev + 1));
     }, 3000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   useEffect(() => {
@@ -44,8 +55,8 @@ const AlbumCover: FC<IAlbumCover> = () => {
       <Image
         src={currentAlbum?.image?.[3]?.['#text'] ?? '/photos/astro_lights.jpg'}
         alt='top 20 last.fm played albums by me'
-        width={200}
-        height={200}
+        width={windowWidth <= 768 ? 100 : 200}
+        height={windowWidth <= 768 ? 100 : 200}
         className={styles.album__container__cover}
       />
     </>
