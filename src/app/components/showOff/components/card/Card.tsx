@@ -193,7 +193,10 @@ const Card: FC<ICard> = ({
           }}
         >
           <div className={styles.cv__container}>
-            <span onClick={() => window.open('/CV_garavito.pdf', '_blank')}>
+            <span
+              onClick={() => window.open('/CV_garavito.pdf', '_blank')}
+              draggable='false'
+            >
               cv
             </span>
           </div>
@@ -265,7 +268,12 @@ const Card: FC<ICard> = ({
         {Boolean(tabName) && <p className={styles.tab__text}>{tabName}</p>}
       </div>
       <div className={styles.body}>
-        <a target='_blank' href={url} className={styles.body__title}>
+        <a
+          target='_blank'
+          href={url}
+          className={styles.body__title}
+          draggable='false'
+        >
           {title === 'efevoo' ? (
             <>
               <span>{title}</span>

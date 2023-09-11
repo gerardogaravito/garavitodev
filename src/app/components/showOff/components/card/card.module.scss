@@ -99,6 +99,7 @@
     margin-bottom: 24px;
     margin-left: 16px;
     line-height: 14px;
+    animation: blink 3s infinite;
 
     @media (max-width: $medium) {
       margin-bottom: 14px;
@@ -111,6 +112,16 @@
       background-color: $primary-color;
       transition: background-color 0.5s;
     }
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    background-color: $primary-color;
+  }
+  50% {
+    background-color: $black-color;
   }
 }
 

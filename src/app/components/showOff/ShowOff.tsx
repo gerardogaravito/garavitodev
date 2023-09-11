@@ -107,6 +107,7 @@ const ShowOff: FC<IShowOff> = ({ isTouch }) => {
             className={styles.dir__item}
             href='https://github.com/gerardogaravito'
             target='_blank'
+            draggable='false'
           >
             / <span>github</span>
           </a>
@@ -114,6 +115,7 @@ const ShowOff: FC<IShowOff> = ({ isTouch }) => {
             className={styles.dir__item}
             href='https://soundcloud.com/garavito666'
             target='_blank'
+            draggable='false'
           >
             / <span>soundcloud</span>
           </a>
@@ -121,6 +123,7 @@ const ShowOff: FC<IShowOff> = ({ isTouch }) => {
             className={styles.dir__item}
             href='https://www.instagram.com/garavito666/?hl=es-la'
             target='_blank'
+            draggable='false'
           >
             / <span>instagram</span>
           </a>
@@ -128,6 +131,7 @@ const ShowOff: FC<IShowOff> = ({ isTouch }) => {
             className={styles.dir__item}
             href='https://www.last.fm/user/garavito666'
             target='_blank'
+            draggable='false'
           >
             /{' '}
             <span>

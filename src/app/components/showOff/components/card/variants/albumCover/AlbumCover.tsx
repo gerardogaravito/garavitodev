@@ -47,10 +47,18 @@ const AlbumCover: FC<IAlbumCover> = () => {
   return (
     <>
       <div className={styles.album__container}>
-        <span onClick={() => window.open(currentAlbum?.url, '_blank')}>
+        <span
+          onClick={() => window.open(currentAlbum?.url, '_blank')}
+          draggable='false'
+        >
           {currentAlbum?.playcount ?? 0}
         </span>
-        <p onClick={() => window.open(currentAlbum?.url, '_blank')}>plays</p>
+        <p
+          onClick={() => window.open(currentAlbum?.url, '_blank')}
+          draggable='false'
+        >
+          plays
+        </p>
       </div>
       <Image
         src={currentAlbum?.image?.[3]?.['#text'] ?? '/photos/astro_lights.jpg'}
