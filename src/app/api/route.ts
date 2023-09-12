@@ -27,7 +27,7 @@ export type LastFmResponseType = {
 
 export async function GET(request: Request) {
   const res = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${process.env.LASTFM_USER}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=21`,
+    `http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${process.env.LASTFM_USER}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=21&period=overall`,
     {
       headers: {
         'Content-Type': 'application/json',
