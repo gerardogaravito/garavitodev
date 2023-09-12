@@ -4,11 +4,20 @@
 .card {
   position: absolute;
   background-color: $gray-color;
-  cursor: pointer;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
   border: 1px solid $white-color;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  &:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
 }
 
 .tab {
@@ -89,8 +98,15 @@
   display: flex;
   align-items: flex-end;
 
-  &:hover {
-    cursor: pointer;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+
+  &:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
   }
 
   & span {
@@ -136,9 +152,19 @@
   transition: opacity 0.2s ease;
   opacity: 0;
 
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+
+  &:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+
   &:hover {
     opacity: 1;
-    cursor: pointer;
   }
 
   & span {
@@ -146,6 +172,10 @@
     color: #0c1f87;
     font-size: 82px;
     margin-bottom: -35px;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     @media (max-width: $medium) {
       font-size: 40px;
