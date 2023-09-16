@@ -117,6 +117,10 @@
     line-height: 14px;
     animation: blink 3s infinite;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @media (max-width: $medium) {
       margin-bottom: 14px;
       font-size: 32px;
