@@ -194,7 +194,7 @@ const Card: FC<ICard> = ({
         >
           <div className={styles.cv__container}>
             <span
-              onClick={() => window.open('/CV_garavito.pdf', '_blank')}
+              onClick={() => window.open('/cv_ggaravito.pdf', '_blank')}
               draggable='false'
             >
               cv
