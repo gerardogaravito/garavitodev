@@ -1,0 +1,69 @@
+@import 'variables.scss';
+
+.container {
+  width: 100%;
+  margin-top: 150px;
+  display: grid;
+  grid-template-rows: 50% 15% 35%;
+  grid-template-columns: 20% 20% 25% 35%;
+
+  @media (max-width: $big) {
+    grid-template-rows: 30% 40% 30%;
+    grid-template-columns: 30% 30% 40%;
+  }
+}
+
+.frame {
+  position: relative;
+  transition: filter 1s;
+  z-index: 5;
+  display: grid;
+  grid-template: 1fr / 1fr;
+
+  &:hover {
+    filter: grayscale(1);
+  }
+
+  &__text {
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 3px;
+    margin-bottom: 3px;
+
+    &__p {
+      font-size: 12px;
+      font-family: 'PP_Mori_Semibold', Helvetica, sans-serif;
+      font-weight: 500;
+
+      @media (max-width: $medium) {
+        font-size: 8px;
+      }
+    }
+    &__span {
+      font-size: 12px;
+      font-family: 'PP_Mori_Italic', Helvetica, sans-serif;
+      font-style: italic;
+
+      @media (max-width: $medium) {
+        font-size: 8px;
+      }
+
+      &__url {
+        font-family: 'PP_Mori_Italic', Helvetica, sans-serif;
+        font-style: italic;
+      }
+      &__url:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+}
