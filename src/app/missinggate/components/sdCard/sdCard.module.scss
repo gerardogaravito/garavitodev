@@ -1,0 +1,35 @@
+@import 'variables.scss';
+
+.button {
+  position: relative;
+  width: 99px;
+  height: 126px;
+  background-color: transparent;
+  background-image: url('/icons/placeholder/sd_card.png');
+  background-size: contain; /* Ajusta la imagen sin deformarla */
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    position: absolute;
+    font-weight: bold;
+    margin: 0;
+    z-index: 1; /* Asegura que el texto esté sobre la imagen */
+    color: $white-color;
+    font-size: 10px;
+    font-family: 'PP_Mori_Semibold_Italic', Helvetica, sans-serif;
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    p {
+      color: greenyellow; /* Cambia el color del texto a rojo en hover */
+    }
+  }
+}

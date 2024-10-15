@@ -3,14 +3,16 @@
 import React from 'react';
 import styles from './page.module.scss';
 
+import { Canva } from './components';
+
 function Home() {
 
   return (
     <main className={styles.main}>
-      PLACEHOLDER placeholder
-      <p className={styles['test-main']}>
+      <Canva />
+      {/* <p className={styles['test-main']}>
         placeholder PLACEHOLDER
-      </p>
+      </p> */}
     </main>
   );
 }
