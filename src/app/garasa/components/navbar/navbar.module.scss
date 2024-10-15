@@ -1,0 +1,10 @@
+@import 'variables.scss';
+
+.navbar {
+  background-color: papayawhip;
+
+  &__text {
+    color: $black-color;
+    font-size: 36px;
+  }
+}
