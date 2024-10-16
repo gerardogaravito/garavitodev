@@ -1,10 +1,61 @@
 @import 'variables.scss';
 
 .navbar {
-  background-color: papayawhip;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0px 36px;
 
-  &__text {
-    color: $black-color;
-    font-size: 36px;
+  @media (max-width: $medium) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 36px 0px;
+  }
+
+  &__left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+
+    &__svg {
+      height: 44px;
+    }
+
+    &__text {
+      color: $garasa_black;
+      font-size: 36px;
+      font-family: 'apfelgroztek_semibold', Helvetica, sans-serif;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $garasa_black;
+        font-size: 24px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+
+        @media (max-width: $medium) {
+          font-size: 18px;
+        }
+
+        &:hover {
+          color: $garasa_blue_3;
+        }
+      }
+    }
   }
 }

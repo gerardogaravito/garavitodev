@@ -6,4 +6,49 @@
   font-family: 'apfelgroztek', Helvetica, sans-serif;
   background-color: $white-color;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  background-color: $garasa_black;
+  display: flex;
+  flex-direction: column;
+  margin: 12px 24px 24px;
+  height: 100%;
+  border-radius: 2px;
+  padding: 12px;
+
+  &__top {
+    background-image: url('/photos/garasa/garasa_hero_image.jpg');
+    background-size: cover; /* La imagen cubre todo el contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    height: 468px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  &__bottom {
+    &__subtitle {
+      font-size: 32px;
+      opacity: 0.5;
+      line-height: 24px;
+
+      @media (max-width: $medium) {
+        font-size: 16px;
+      }
+    }
+
+    &__title {
+      font-size: 64px;
+      line-height: 54px;
+
+      @media (max-width: $medium) {
+        font-size: 32px;
+        line-height: 28px;
+      }
+    }
+  }
 }
