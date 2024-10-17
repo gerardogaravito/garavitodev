@@ -24,4 +24,8 @@ export const sd_cards: SD_CARDS_TYPE[] = [
     title: 'soundcloud',
     url: 'https://soundcloud.com/missing-gate',
   },
+  {
+    title: 'bandcamp',
+    url: 'https://missinggate.bandcamp.com/follow_me',
+  },
 ]

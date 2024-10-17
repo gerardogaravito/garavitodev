@@ -37,7 +37,25 @@ const Canva: FC = () => {
           })
         }
       </div>
-    </section>
+      <div className={styles.bandcamp}>
+        {/* <iframe
+          scrolling="no"
+          allowTransparency={true}
+          style={{
+            border: 0,
+            width: '100%',
+            height: '50px',
+            backgroundColor: 'transparent'
+          }}
+          src="https://bandcamp.com/band_follow_button_deluxe/2678843765">
+        </iframe> */}
+        {/* <iframe
+          scrolling="no"
+          style={{ border: 0, width: '100%', height: '33px' }}
+          src="https://bandcamp.com/band_follow_button_classic/2678843765">
+        </iframe> */}
+      </div>
+    </section >
   )
 }
 
