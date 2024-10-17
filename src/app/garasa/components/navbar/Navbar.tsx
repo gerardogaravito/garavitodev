@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styles from './navbar.module.scss'
-import GarasaLogo from '@/app/garasa/assets/svg/garasa_logo.svg'
+// import GarasaLogo from '@/app/garasa/assets/svg/garasa_logo.svg'
 
 interface NavbarProps { }
 
@@ -9,7 +9,7 @@ const Navbar: FC<NavbarProps> = () => {
   return (
     <section className={styles.navbar}>
       <div className={styles.navbar__left}>
-        <GarasaLogo className={styles.navbar__left__svg} />
+        {/* <GarasaLogo className={styles.navbar__left__svg} /> */}
         <p className={styles.navbar__left__text}>
           GARASA
         </p>
