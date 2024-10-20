@@ -37,6 +37,24 @@ const Canva: FC = () => {
           })
         }
       </div>
+      <div className={styles.video}>
+        <h3>videos</h3>
+        <iframe
+          width="100%"
+          height="240px"
+          src="https://www.youtube.com/embed/Vi9cee7GuH0?si=SfvrsvCaqzKTCwZF"
+          title="Placeholder YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div className={styles.at}>
+        <a href='https://www.instagram.com/missinggate' target='_blank'>
+          <span className={styles.at__span}>@</span>missinggate
+        </a>
+      </div>
       <div className={styles.bandcamp}>
         {/* <iframe
           scrolling="no"

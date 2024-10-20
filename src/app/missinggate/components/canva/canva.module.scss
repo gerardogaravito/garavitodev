@@ -29,3 +29,37 @@
   margin: 36px 24px 0px;
   justify-content: center;
 }
+
+.video {
+  margin-top: 60px;
+  display: flex;
+  font-size: 14px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'PP_Mori_Semibold_Italic', Helvetica, sans-serif;
+}
+
+.at {
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 48px 24px 8px;
+  font-size: 14px;
+  font-family: 'PP_Mori', Helvetica, sans-serif;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: center;
+
+  & a {
+    font-family: 'PP_Mori_Semibold_Italic', Helvetica, sans-serif;
+  }
+
+  &__span {
+    font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+  }
+
+  &:hover {
+    color: red;
+  }
+}
