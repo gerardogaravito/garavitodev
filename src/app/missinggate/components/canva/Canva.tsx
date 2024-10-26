@@ -49,6 +49,16 @@ const Canva: FC = () => {
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
+        <iframe
+          width="100%"
+          height="240px"
+          src="https://www.youtube.com/embed/SoK4DRo2gQk?si=ABESdvGp4wlF91t6"
+          title="Placeholder YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
       </div>
       <div className={styles.at}>
         <a href='https://www.instagram.com/missinggate' target='_blank'>
