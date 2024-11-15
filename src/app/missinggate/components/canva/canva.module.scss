@@ -5,13 +5,13 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  // min-height: 100vh;
   // background-image: url('https://media.giphy.com/media/3o6vXSCHXrkT97HR1S/giphy.gif');
   // background-image: url('https://media.giphy.com/media/vvXQpi9u6TK7CW4J4q/giphy.gif');
   // background-image: url('https://media.giphy.com/media/QhDoY2TgEfYuCQvMiR/giphy.gif');
   // background-image: url('https://media.giphy.com/media/jsUXu7umQRFqU/giphy.gif');
   // background-image: url('https://media.giphy.com/media/RVE9NtcwEiVUM1TdgC/giphy.gif');
-  background-image: url('https://media.giphy.com/media/n3UBd63oVlQLC/giphy.gif');
+  // background-image: url('https://media.giphy.com/media/n3UBd63oVlQLC/giphy.gif');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -25,8 +25,8 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
-  margin: 36px 24px 0px;
+  gap: 24px;
+  margin: 36px 36px 0px;
   justify-content: center;
 }
 

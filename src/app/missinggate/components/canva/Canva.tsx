@@ -22,7 +22,6 @@ const Canva: FC = () => {
   return (
     <section
       className={styles.container}
-      style={{ height: '100vh' }}
     >
       <Image
         src={imageSrc}
@@ -39,6 +38,16 @@ const Canva: FC = () => {
       </div>
       <div className={styles.video}>
         <h3>videos</h3>
+        <iframe
+          width="100%"
+          height="240px"
+          src="https://www.youtube.com/embed/GEcO0BShdLI?si=0ZOMVYZe6RZJrR0p"
+          title="Placeholder YouTube ambience EP"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
         <iframe
           width="100%"
           height="240px"
