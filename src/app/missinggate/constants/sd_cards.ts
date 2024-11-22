@@ -30,6 +30,6 @@ export const sd_cards: SD_CARDS_TYPE[] = [
   },
   {
     title: 'youtube',
-    url: 'https://www.youtube.com/@missinggate?sub_confirmation=1',
+    url: 'https://www.youtube.com/channel/UCKndYdjf1k43EOnJokn5W5w?sub_confirmation=1',
   },
 ]
