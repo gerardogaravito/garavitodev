@@ -13,12 +13,12 @@ export const sd_cards: SD_CARDS_TYPE[] = [
     url: 'https://open.spotify.com/intl-es/artist/6fTOBo7oOruZWGmbYyJmDt',
   },
   // {
-  //   title: 'youtube',
-  //   url: 'https://www.youtube.com/watch?v=kmfFvFkxVmY',
+  //   title: 'soundcloud',
+  //   url: 'https://soundcloud.com/missing-gate',
   // },
   {
-    title: 'soundcloud',
-    url: 'https://soundcloud.com/missing-gate',
+    title: 'instagram',
+    url: 'https://instagram.com/missinggate',
   },
   {
     title: 'bandcamp',
@@ -29,7 +29,7 @@ export const sd_cards: SD_CARDS_TYPE[] = [
     url: 'mailto:placeholdercuh@gmail.com',
   },
   {
-    title: 'instagram',
-    url: 'https://instagram.com/missinggate',
+    title: 'youtube',
+    url: 'https://www.youtube.com/@missinggate?sub_confirmation=1',
   },
 ]
