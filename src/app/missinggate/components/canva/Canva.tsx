@@ -41,6 +41,26 @@ const Canva: FC = () => {
         <iframe
           width="100%"
           height="240px"
+          src="https://www.youtube.com/embed/oHbgmGSAe3Y"
+          title="Placeholder YouTube vida fria techno performance"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+        <iframe
+          width="100%"
+          height="240px"
+          src="https://www.youtube.com/embed/C_iDEzg1uwc"
+          title="Placeholder YouTube vida fria"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+        <iframe
+          width="100%"
+          height="240px"
           src="https://www.youtube.com/embed/GEcO0BShdLI?si=0ZOMVYZe6RZJrR0p"
           title="Placeholder YouTube ambience EP"
           frameBorder="0"
