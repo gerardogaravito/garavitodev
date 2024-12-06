@@ -41,6 +41,16 @@ const Canva: FC = () => {
         <iframe
           width="100%"
           height="240px"
+          src="https://www.youtube.com/embed/G8jhSfEPXBI?si=xjZ3-vceAzRvMIBm"
+          title="Placeholder YouTube jam 001 techno performance"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+        <iframe
+          width="100%"
+          height="240px"
           src="https://www.youtube.com/embed/oHbgmGSAe3Y"
           title="Placeholder YouTube vida fria techno performance"
           frameBorder="0"
