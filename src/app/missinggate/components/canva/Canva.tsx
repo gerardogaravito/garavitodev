@@ -100,8 +100,8 @@ const Canva: FC = () => {
         ></iframe>
       </div>
       <div className={styles.at}>
-        <a href='https://www.instagram.com/missinggate' target='_blank'>
-          <span className={styles.at__span}>@</span>missinggate
+        <a href='https://www.instagram.com/placeholder___x' target='_blank'>
+          <span className={styles.at__span}>@</span>placeholder___x
         </a>
       </div>
       <div className={styles.bandcamp}>
