@@ -18,7 +18,7 @@ export const sd_cards: SD_CARDS_TYPE[] = [
   // },
   {
     title: 'instagram',
-    url: 'https://instagram.com/missinggate',
+    url: 'https://instagram.com/placeholder___x',
   },
   {
     title: 'bandcamp',
