@@ -3,13 +3,14 @@
 import React from 'react';
 import styles from './page.module.scss';
 
-import { Hero } from '@/app/garasa/components'
+import { Hero, Services } from '@/app/garasa/components'
 
 function Home() {
 
   return (
     <main className={styles.main}>
       <Hero />
+      <Services />
     </main>
   );
 }

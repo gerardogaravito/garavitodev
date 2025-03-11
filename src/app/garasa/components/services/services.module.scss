@@ -1,0 +1,11 @@
+@import 'variables.scss';
+
+.section {
+  color: $white-color;
+  font-size: 32px;
+  font-family: 'apfelgroztek', Helvetica, sans-serif;
+  background-color: $white-color;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
