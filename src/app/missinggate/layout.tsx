@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <Head>
-        <meta property='og:title' content='garavito666' />
+        <meta property='og:title' content='placeholder' />
         <meta
           property='og:description'
           content='placeholder sound work'
@@ -48,8 +48,8 @@ export default function RootLayout({
         <meta property='og:type' content='website' />
         {/* TWIITER */}
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@garavito666' />
-        <meta name='twitter:title' content='garavito666' />
+        <meta name='twitter:site' content='@placeholder___x' />
+        <meta name='twitter:title' content='placeholder' />
         <meta
           name='twitter:description'
           content='placeholder sound work'

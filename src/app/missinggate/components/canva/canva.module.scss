@@ -30,6 +30,55 @@
   justify-content: center;
 }
 
+.portada {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.portadaImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.links {
+  width: 100%;
+  margin: 24px 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-family: 'PP_Mori_Light', Helvetica, sans-serif;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    gap: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px;
+  }
+
+  &__item {
+    font-family: 'PP_Mori_Semibold_Italic', Helvetica, sans-serif;
+    transition: color 0.3s ease;
+    font-size: 20px;
+    text-decoration: underline;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
 .video {
   margin-top: 60px;
   display: flex;
@@ -37,6 +86,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 14px;
   gap: 12px;
   font-family: 'PP_Mori_Semibold_Italic', Helvetica, sans-serif;
 }
@@ -61,5 +113,59 @@
 
   &:hover {
     color: red;
+  }
+}
+
+.bandcamp {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 14px;
+  display: flex;
+  justify-content: flex-start;
+
+  &__button {
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #00a1c6;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: auto;
+    min-height: 24px;
+    width: 160px;
+    letter-spacing: 0;
+    line-height: 17px;
+    text-decoration: none;
+    justify-content: flex-start;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+  }
+
+  &__icon {
+    padding-right: 4px;
+    margin-right: 4px;
+    height: 10px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  &__follow {
+    font-weight: normal;
+    font-size: 12px;
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 13px;
   }
 }
