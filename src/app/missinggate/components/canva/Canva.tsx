@@ -26,7 +26,7 @@ const Canva: FC = () => {
       <Image
         src={imageSrc}
         width={200}
-        height={100}
+        height={55}
         alt='placeholder_text'
       />
       <div className={styles.portada}>
@@ -40,15 +40,15 @@ const Canva: FC = () => {
       </div>
 
       <div className={styles.links}>
-        <h3 className={styles.links__title}>78741, tx @</h3>
+        <h3 className={styles.links__title}>78741, tx <span className={styles.links__span}>@</span></h3>
         <div className={styles.links__container}>
-          <a className={styles.links__item} href="" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://music.apple.com/mx/song/78741-tx/1809975969" target="_blank" rel="noopener noreferrer">
             apple music
           </a>
-          <a className={styles.links__item} href="" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://open.spotify.com/intl-es/track/0hhNLyNquBu29d50MSOSBL?si=c2c47f7b7a934a46" target="_blank" rel="noopener noreferrer">
             spotify
           </a>
-          <a className={styles.links__item} href="" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://www.youtube.com/watch?v=z7yWcrNOTl4&list=OLAK5uy_kpLImoiSfRDB4kNcvHZ8BJWGpK2R5r9jo" target="_blank" rel="noopener noreferrer">
             youtube
           </a>
         </div>

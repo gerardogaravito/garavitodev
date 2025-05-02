@@ -32,8 +32,8 @@
 
 .portada {
   width: 100%;
-  max-width: 400px;
-  padding: 40px 14px;
+  max-width: 250px;
+  padding: 40px 14px 10px;
   display: flex;
   justify-content: center;
 }
@@ -51,8 +51,13 @@
   flex-direction: column;
   align-items: center;
 
+  &__span {
+    font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+    font-size: 22px;
+  }
+
   &__title {
-    font-family: 'PP_Mori_Light', Helvetica, sans-serif;
+    font-family: 'PP_Mori', Helvetica, sans-serif;
     font-size: 24px;
     margin-bottom: 16px;
   }
@@ -80,7 +85,7 @@
 }
 
 .video {
-  margin-top: 60px;
+  margin-top: 100px;
   display: flex;
   font-size: 14px;
   flex-direction: column;
