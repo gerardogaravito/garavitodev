@@ -31,24 +31,24 @@ const Canva: FC = () => {
       />
       <div className={styles.portada}>
         <Image
-          src="/photos/missinggate/portada_78741TX.jpg"
+          src="/photos/missinggate/portada_insomnio_granular_master.jpg"
           width={800}
           height={500}
-          alt="Portada 78741 TX"
+          alt="Portada Insomnio Granular"
           className={styles.portadaImage}
         />
       </div>
 
       <div className={styles.links}>
-        <h3 className={styles.links__title}>78741, tx <span className={styles.links__span}>@</span></h3>
+        <h3 className={styles.links__title}>insomnio granular <span className={styles.links__span}>@</span></h3>
         <div className={styles.links__container}>
-          <a className={styles.links__item} href="https://music.apple.com/mx/song/78741-tx/1809975969" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://music.apple.com/mx/song/insomnio-granular/1811421470" target="_blank" rel="noopener noreferrer">
             apple music
           </a>
-          <a className={styles.links__item} href="https://open.spotify.com/intl-es/track/0hhNLyNquBu29d50MSOSBL?si=c2c47f7b7a934a46" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://open.spotify.com/intl-es/track/4i5cYGeDNF6qRQWDj0rt2d?si=dcac897da29c4667" target="_blank" rel="noopener noreferrer">
             spotify
           </a>
-          <a className={styles.links__item} href="https://www.youtube.com/watch?v=z7yWcrNOTl4&list=OLAK5uy_kpLImoiSfRDB4kNcvHZ8BJWGpK2R5r9jo" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://youtu.be/d7J-129EnQ8?si=UymJIHWY5bOzl2FP" target="_blank" rel="noopener noreferrer">
             youtube
           </a>
         </div>
