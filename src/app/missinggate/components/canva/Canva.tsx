@@ -31,24 +31,27 @@ const Canva: FC = () => {
       />
       <div className={styles.portada}>
         <Image
-          src="/photos/missinggate/portada_insomnio_granular_master.jpg"
+          src="/photos/missinggate/portada_uvfx.jpg"
           width={800}
           height={500}
-          alt="Portada Insomnio Granular"
+          alt="Portada Unknown: VFX"
           className={styles.portadaImage}
         />
       </div>
 
       <div className={styles.links}>
-        <h3 className={styles.links__title}>insomnio granular <span className={styles.links__span}>@</span></h3>
+        <h3 className={styles.links__title}>unknown: vfx <span className={styles.links__span}>@</span></h3>
         <div className={styles.links__container}>
-          <a className={styles.links__item} href="https://music.apple.com/mx/song/insomnio-granular/1811421470" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://music.apple.com/mx/album/unknown-vfx-ep/1812782045" target="_blank" rel="noopener noreferrer">
             apple music
           </a>
-          <a className={styles.links__item} href="https://open.spotify.com/intl-es/track/4i5cYGeDNF6qRQWDj0rt2d?si=dcac897da29c4667" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://open.spotify.com/intl-es/album/4NtqR17AYMoK8vcC8LKMye?si=TWCOZQghSvWcJMbNE7Rm8w" target="_blank" rel="noopener noreferrer">
             spotify
           </a>
-          <a className={styles.links__item} href="https://youtu.be/d7J-129EnQ8?si=UymJIHWY5bOzl2FP" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://placeholder-mx.bandcamp.com/album/unknown-vfx" target="_blank" rel="noopener noreferrer">
+            bandcamp
+          </a>
+          <a className={styles.links__item} href="https://www.youtube.com/watch?v=P9yR290akp0&list=OLAK5uy_kGqIukVb4RRHIQWHo4QvE4SFf5L7rKYGs" target="_blank" rel="noopener noreferrer">
             youtube
           </a>
         </div>
