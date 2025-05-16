@@ -64,7 +64,7 @@ const Canva: FC = () => {
 
       <div className={styles.bandcamp}>
         <a
-          href="https://missinggate.bandcamp.com/follow_me"
+          href="https://placeholdermx.bandcamp.com/follow_me"
           target="_blank"
           className={styles.bandcamp__button}
         >
