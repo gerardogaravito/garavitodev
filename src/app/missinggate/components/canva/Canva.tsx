@@ -1,8 +1,6 @@
-import React, { FC, useEffect, useState } from 'react'
-import styles from './canva.module.scss';
-import { SdCard } from '@/app/missinggate/components'
 import Image from 'next/image';
-import { sd_cards } from '../../constants/sd_cards';
+import { FC, useEffect, useState } from 'react';
+import styles from './canva.module.scss';
 
 const Canva: FC = () => {
   const [imageSrc, setImageSrc] = useState('/icons/placeholder/title_white.png');
@@ -31,27 +29,27 @@ const Canva: FC = () => {
       />
       <div className={styles.portada}>
         <Image
-          src="/photos/missinggate/portada_uvfx.jpg"
+          src="/photos/missinggate/portada_inopia.jpg"
           width={800}
           height={500}
-          alt="Portada Unknown: VFX"
+          alt="Portada Inopia"
           className={styles.portadaImage}
         />
       </div>
 
       <div className={styles.links}>
-        <h3 className={styles.links__title}>unknown: vfx <span className={styles.links__span}>@</span></h3>
+        <h3 className={styles.links__title}>inopia <span className={styles.links__span}>@</span></h3>
         <div className={styles.links__container}>
-          <a className={styles.links__item} href="https://music.apple.com/mx/album/unknown-vfx-ep/1812782045" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://music.apple.com/mx/album/inopia/1878212528" target="_blank" rel="noopener noreferrer">
             apple music
           </a>
-          <a className={styles.links__item} href="https://open.spotify.com/intl-es/album/4NtqR17AYMoK8vcC8LKMye?si=TWCOZQghSvWcJMbNE7Rm8w" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://open.spotify.com/intl-es/album/0YUmndCLW6RxmpeicI2K2p?si=Q_6rkVNIQUOsLD6pi4I6MQ" target="_blank" rel="noopener noreferrer">
             spotify
           </a>
-          <a className={styles.links__item} href="https://placeholder-mx.bandcamp.com/album/unknown-vfx" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://placeholder-mx.bandcamp.com/album/inopia" target="_blank" rel="noopener noreferrer">
             bandcamp
           </a>
-          <a className={styles.links__item} href="https://www.youtube.com/watch?v=P9yR290akp0&list=OLAK5uy_kGqIukVb4RRHIQWHo4QvE4SFf5L7rKYGs" target="_blank" rel="noopener noreferrer">
+          <a className={styles.links__item} href="https://www.youtube.com/watch?v=t0ijyI8sqZE&list=OLAK5uy_mu99QQ0SUlFxYe7xqO06wEwac_tvFLn3A" target="_blank" rel="noopener noreferrer">
             youtube
           </a>
         </div>
@@ -86,8 +84,8 @@ const Canva: FC = () => {
         <iframe
           width="100%"
           height="240px"
-          src="https://www.youtube.com/embed/PFDMxjC3uyw?si=sbQ1g0NfSnsIBOVE"
-          title="Placeholder YouTube jam 002 techno performance"
+          src="https://www.youtube.com/embed/NtCGG6f0-cE?si=doAYNWskPH6Ri7bY"
+          title="Placeholder Las Dunas Records"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
@@ -96,8 +94,8 @@ const Canva: FC = () => {
         <iframe
           width="100%"
           height="240px"
-          src="https://www.youtube.com/embed/EE0nXytSgSo?si=2pFUrKGocwzH-VGR"
-          title="Placeholder YouTube Live @ Lee Bar MTY MX"
+          src="https://www.youtube.com/embed/O8-7-GtSM84?si=hgSpwXiiP9aD0Vip"
+          title="Placeholder YouTube Musica de Inteligentes"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
@@ -106,8 +104,8 @@ const Canva: FC = () => {
         <iframe
           width="100%"
           height="240px"
-          src="https://www.youtube.com/embed/SoK4DRo2gQk?si=ABESdvGp4wlF91t6"
-          title="Placeholder YouTube video player"
+          src="https://www.youtube.com/embed/ajvFbJhbuQ4?si=k_zMGCT_AdApJfRc"
+          title="Placeholder YouTube Insomnio Granular"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
