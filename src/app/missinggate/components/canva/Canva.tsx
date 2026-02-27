@@ -104,8 +104,8 @@ const Canva: FC = () => {
         <iframe
           width="100%"
           height="240px"
-          src="https://www.youtube.com/embed/ajvFbJhbuQ4?si=k_zMGCT_AdApJfRc"
-          title="Placeholder YouTube Insomnio Granular"
+          src="https://www.youtube.com/embed/EE0nXytSgSo?si=QxQFUpjJhVfx5fP1"
+          title="Placeholder @ Lee Bar MTY MX"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
