@@ -1,20 +1,17 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
+import { EnumCardVariants } from '../../cardsInfo';
+import { zIndexMutaleListType } from '../../utils';
 import styles from './card.module.scss';
 import { ICard } from './card.types';
 import {
-  onMouseDown,
-  onMouseUp,
-  onMouseMove,
-  onTouchMove,
-  onTouchStart,
-  onTouchEnd,
-  vhToPixels,
-  vwToPixels,
   dimensionsController,
+  onMouseDown,
+  onMouseMove,
+  onMouseUp,
+  vhToPixels,
+  vwToPixels
 } from './utils';
 import { AlbumCover, CV } from './variants';
-import { EnumCardVariants } from '../../cardsInfo';
-import { zIndexMutaleListType } from '../../utils';
 
 const Card: FC<ICard> = ({
   foregroundRef,
@@ -192,7 +189,7 @@ const Card: FC<ICard> = ({
         >
           <div className={styles.cv__container}>
             <span
-              onClick={() => window.open('/cv_garavitog.pdf', '_blank')}
+              onClick={() => window.open('/cv_2026.pdf', '_blank')}
               draggable='false'
             >
               cv
