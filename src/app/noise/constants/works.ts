@@ -21,7 +21,7 @@ export const sections: Section[] = [
       { type: 'image', file: 'garavito_leebar_mty.JPG', src: '/noise/garavito_leebar_mty.jpg', width: 1499, height: 2000 },
       { type: 'youtube', id: 'xydGz2OTLTo', caption: 'placeholder en LEEBAR MONTERREY' },
       { type: 'image', file: 'garavito_noise_room.JPG', src: '/noise/garavito_noise_room.jpg', width: 1600, height: 2000 },
-      { type: 'image', file: 'garavito_saltillo.HEIC', src: '/noise/garavito_saltillo.jpg', width: 2000, height: 1500 },
+      { type: 'image', file: 'garavito_saltillo_02.jpg', src: '/noise/garavito_saltillo_02.jpg', width: 1500, height: 2000 },
       { type: 'image', file: 'placeholder_festival_arido.JPG', src: '/noise/placeholder_festival_arido.jpg', width: 1600, height: 2000 },
       { type: 'image', file: 'placeholder_inopia_01.heic', src: '/noise/placeholder_inopia_01.jpg', width: 2000, height: 2000 },
       { type: 'image', file: 'placeholder_inopia_02.HEIC', src: '/noise/placeholder_inopia_02.jpg', width: 2000, height: 1500 },
