@@ -66,6 +66,14 @@ function Home() {
         >
           instagram.com/garavito666
         </a>
+        <a
+          className={styles.header__contact}
+          href='https://garavito666.bandcamp.com'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          garavito666.bandcamp.com
+        </a>
       </header>
 
       {sections.map((section) => (
@@ -74,15 +82,6 @@ function Home() {
           {section.works.map(renderWork)}
         </section>
       ))}
-
-      <footer className={styles.footer}>
-        <a href='https://missinggate.org' target='_blank' rel='noopener noreferrer'>
-          missinggate.org
-        </a>
-        <a href='https://www.instagram.com/placeholder___x' target='_blank' rel='noopener noreferrer'>
-          <span className={styles.footer__at}>@</span>placeholder___x
-        </a>
-      </footer>
     </main>
   );
 }

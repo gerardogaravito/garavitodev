@@ -37,6 +37,10 @@
     &:hover {
       color: red;
     }
+
+    & + & {
+      margin-top: 4px;
+    }
   }
 }
 
@@ -80,29 +84,5 @@
     font-size: 11px;
     color: #4d4d4d;
     user-select: text;
-  }
-}
-
-.footer {
-  width: 100%;
-  max-width: 560px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding-top: 24px;
-  font-family: 'PP_Mori_Semibold_Italic', Helvetica, sans-serif;
-  font-size: 14px;
-
-  & a {
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: red;
-    }
-  }
-
-  &__at {
-    font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
   }
 }
