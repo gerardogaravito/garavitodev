@@ -1,0 +1,94 @@
+@import 'variables.scss';
+
+.main {
+  color: $white-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 16px 24px;
+}
+
+.header {
+  width: 100%;
+  max-width: 560px;
+  margin-bottom: 72px;
+
+  &__name {
+    font-family: 'PP_Mori_Semibold', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+  }
+
+  &__subtitle {
+    font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: 4px;
+  }
+}
+
+.section {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-bottom: 96px;
+
+  &__title {
+    font-family: 'PP_Mori_Semibold_Italic', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+  }
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__media {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: $gray-color;
+  }
+
+  &__youtube {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    background-color: $gray-color;
+  }
+
+  &__caption {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #4d4d4d;
+    user-select: text;
+  }
+}
+
+.footer {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 24px;
+  font-family: 'PP_Mori_Semibold_Italic', Helvetica, sans-serif;
+  font-size: 14px;
+
+  & a {
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  &__at {
+    font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
+  }
+}

@@ -2,6 +2,7 @@
 const HostsEnum = {
   GARAVITO: 'garavito.dev',
   MISSING_GATE: 'missinggate.org',
+  NOISE: 'noise.garavito.dev',
 };
 
 /** @type {import('next').NextConfig} */
@@ -39,6 +40,16 @@ const nextConfig = {
           },
         ],
         destination: '/missinggate/:path*',
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: HostsEnum.NOISE,
+          },
+        ],
+        destination: '/noise/:path*',
       },
     ];
   },

@@ -10,11 +10,13 @@ export function middleware(req: NextRequest) {
     url.pathname = `/garavito${url.pathname}`;
   } else if (host === HostsEnum.MISSING_GATE) {
     url.pathname = `/missinggate${url.pathname}`;
+  } else if (host === HostsEnum.NOISE) {
+    url.pathname = `/noise${url.pathname}`;
   }
 
   return NextResponse.rewrite(url);
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'], // Excluir rutas que no quieres procesar
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'], // Exclude routes and static files from /public
 };
