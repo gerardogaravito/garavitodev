@@ -58,6 +58,14 @@ function Home() {
       <header className={styles.header}>
         <h1 className={styles.header__name}>Gerardo Garavito</h1>
         <p className={styles.header__subtitle}>audio y dibujo</p>
+        <a
+          className={styles.header__contact}
+          href='https://www.instagram.com/garavito666'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          instagram.com/garavito666
+        </a>
       </header>
 
       {sections.map((section) => (

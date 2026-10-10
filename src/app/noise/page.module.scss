@@ -24,6 +24,20 @@
     font-size: 18px;
     margin-top: 4px;
   }
+
+  &__contact {
+    display: block;
+    text-align: right;
+    margin-top: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #4d4d4d;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: red;
+    }
+  }
 }
 
 .section {
