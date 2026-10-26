@@ -84,6 +84,16 @@ const Canva: FC = () => {
         <iframe
           width="100%"
           height="240px"
+          src="https://www.youtube.com/embed/xydGz2OTLTo"
+          title="Placeholder en LeeBar Monterrey"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+        <iframe
+          width="100%"
+          height="240px"
           src="https://www.youtube.com/embed/NtCGG6f0-cE?si=doAYNWskPH6Ri7bY"
           title="Placeholder Las Dunas Records"
           frameBorder="0"
