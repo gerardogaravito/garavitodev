@@ -111,16 +111,6 @@ const Canva: FC = () => {
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
-        <iframe
-          width="100%"
-          height="240px"
-          src="https://www.youtube.com/embed/EE0nXytSgSo?si=QxQFUpjJhVfx5fP1"
-          title="Placeholder @ Lee Bar MTY MX"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
       </div>
 
       <div className={styles.at}>
