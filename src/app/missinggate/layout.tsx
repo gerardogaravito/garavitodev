@@ -1,10 +1,14 @@
 import '../globals.scss';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+};
 
 export const metadata: Metadata = {
   title: '✶ placeholder ✶',
@@ -25,7 +29,6 @@ export const metadata: Metadata = {
     'typescript',
   ],
   authors: [{ name: 'garavito666' }],
-  colorScheme: 'dark',
   creator: 'Gerardo Garavito',
   publisher: 'Gerardo Garavito',
 };

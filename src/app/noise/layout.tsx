@@ -1,13 +1,16 @@
 import '../globals.scss';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://noise.garavito.dev'),
   title: 'Gerardo Garavito — audio y dibujo',
   description: 'audio y dibujo',
   authors: [{ name: 'Gerardo Garavito' }],
-  colorScheme: 'dark',
   creator: 'Gerardo Garavito',
   openGraph: {
     title: 'Gerardo Garavito',

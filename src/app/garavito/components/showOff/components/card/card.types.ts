@@ -2,7 +2,7 @@ import { EnumCardVariants } from '../../cardsInfo';
 import { zIndexMutaleListType } from '../../utils';
 
 export interface ICard {
-  foregroundRef: React.RefObject<HTMLDivElement>;
+  foregroundRef: React.RefObject<HTMLDivElement | null>;
   position: { x: number; y: number };
   isFromRight: boolean;
   isFromMiddle: boolean;
