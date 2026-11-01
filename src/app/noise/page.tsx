@@ -57,8 +57,18 @@ function Home() {
   return (
     <main className={styles.main}>
       <header className={styles.header}>
-        <h1 className={styles.header__name}>Gerardo Garavito</h1>
-        <p className={styles.header__subtitle}>audio y dibujo</p>
+        <h1 className={styles.header__name}>
+          {/* Sagres is personal-use only: the name ships as outlined SVG paths, never as a webfont */}
+          <Image
+            src='/noise/gerardo_garavito.svg'
+            width={6082}
+            height={879}
+            alt='Gerardo Garavito'
+            className={styles.header__logo}
+            unoptimized
+            priority
+          />
+        </h1>
         <a
           className={styles.header__contact}
           href='https://www.instagram.com/garavito666'

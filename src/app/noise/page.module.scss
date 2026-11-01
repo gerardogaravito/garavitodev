@@ -17,12 +17,14 @@
     font-family: 'PP_Mori_Semibold', Helvetica, sans-serif;
     font-weight: normal;
     font-size: 28px;
+    margin: 0;
   }
 
-  &__subtitle {
-    font-family: 'PP_Mori_Light_Italic', Helvetica, sans-serif;
-    font-size: 18px;
-    margin-top: 4px;
+  &__logo {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
   }
 
   &__contact {
