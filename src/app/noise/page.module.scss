@@ -54,6 +54,7 @@
   &__cover {
     display: block;
     width: 100%;
+    max-width: 280px;
     height: auto;
     background-color: $gray-color;
   }

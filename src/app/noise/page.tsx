@@ -84,7 +84,7 @@ function Home() {
           height={1600}
           alt='Portada Garavito'
           className={styles.release__cover}
-          sizes='(max-width: 600px) 100vw, 560px'
+          sizes='280px'
           priority
         />
         <h2 className={styles.release__title}>
