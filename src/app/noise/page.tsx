@@ -58,14 +58,13 @@ function Home() {
     <main className={styles.main}>
       <header className={styles.header}>
         <h1 className={styles.header__name}>
-          {/* Sagres is personal-use only: the name ships as outlined SVG paths, never as a webfont */}
+          {/* hand-drawn calligraphy, black on transparent; tinted gray in CSS */}
           <Image
-            src='/noise/gerardo_garavito.svg'
-            width={6082}
-            height={879}
-            alt='Gerardo Garavito'
+            src='/noise/garavito_logo.png'
+            width={1280}
+            height={209}
+            alt='Garavito'
             className={styles.header__logo}
-            unoptimized
             priority
           />
         </h1>

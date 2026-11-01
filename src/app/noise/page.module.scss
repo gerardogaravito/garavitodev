@@ -25,6 +25,8 @@
     width: 100%;
     max-width: 320px;
     height: auto;
+    // black -> #8c8c8c
+    filter: invert(55%);
   }
 
   &__contact {
