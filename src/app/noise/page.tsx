@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './page.module.scss';
 
+import { releaseLinks } from './constants/release';
 import { sections, Work } from './constants/works';
 
 function renderWork(work: Work) {
@@ -75,6 +76,34 @@ function Home() {
           garavito666.bandcamp.com
         </a>
       </header>
+
+      <section className={styles.release}>
+        <Image
+          src='/noise/garavito_portada.jpg'
+          width={1600}
+          height={1600}
+          alt='Portada Garavito'
+          className={styles.release__cover}
+          sizes='(max-width: 600px) 100vw, 560px'
+          priority
+        />
+        <h2 className={styles.release__title}>
+          garavito <span className={styles.release__at}>@</span>
+        </h2>
+        <div className={styles.release__links}>
+          {releaseLinks.map((link) => (
+            <a
+              key={link.title}
+              className={styles.release__link}
+              href={link.url}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {link.title}
+            </a>
+          ))}
+        </div>
+      </section>
 
       {sections.map((section) => (
         <section key={section.title} className={styles.section}>

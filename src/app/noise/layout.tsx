@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'Gerardo Garavito',
     description: 'audio y dibujo',
     url: 'https://noise.garavito.dev',
-    images: ['/noise/garavito_sonora_noise_01.jpg'],
+    images: ['/noise/garavito_portada.jpg'],
     type: 'website',
   },
 };
