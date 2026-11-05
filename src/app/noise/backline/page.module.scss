@@ -33,9 +33,16 @@
   }
 }
 
+.contactName {
+  margin: 0 0 4px;
+  color: #737373;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
 .contact {
   display: block;
-  width: min(100%, 282px);
+  width: min(100%, 160px);
   height: auto;
 }
 

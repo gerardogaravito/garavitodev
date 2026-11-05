@@ -16,11 +16,12 @@ export default function BacklinePage() {
       <header className={styles.header}>
         <div>
           <h1>renta de audio y backline</h1>
+          <p className={styles.contactName}>Gerardo Garavito</p>
           <Image
             src='/backline/contact.png'
-            width={563}
+            width={319}
             height={43}
-            alt='Contacto'
+            alt='WhatsApp'
             className={styles.contact}
           />
         </div>
