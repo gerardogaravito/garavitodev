@@ -57,6 +57,17 @@
   background: #171717;
 }
 
+.catalogPages {
+  display: none;
+}
+
+.catalogPage {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #171717;
+}
+
 .fallback {
   max-width: 1200px;
   margin: 12px auto 0;
@@ -81,7 +92,12 @@
   }
 
   .catalog {
-    height: 70vh;
-    min-height: 480px;
+    display: none;
+  }
+
+  .catalogPages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 }

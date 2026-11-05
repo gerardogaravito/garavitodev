@@ -3,6 +3,10 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 
 const pdfUrl = '/backline/garavito-renta-audio.pdf';
+const catalogPages = Array.from(
+  { length: 8 },
+  (_, index) => `/backline/pages/page-${index + 1}.jpg`,
+);
 
 export const metadata: Metadata = {
   title: 'Renta de audio y backline — Gerardo Garavito',
@@ -36,6 +40,20 @@ export default function BacklinePage() {
         src={`${pdfUrl}#view=FitH`}
         title='Catálogo de renta de audio y backline'
       />
+
+      <div className={styles.catalogPages}>
+        {catalogPages.map((page, index) => (
+          <Image
+            key={page}
+            src={page}
+            width={1600}
+            height={900}
+            alt={`Catálogo de renta de audio, página ${index + 1} de ${catalogPages.length}`}
+            className={styles.catalogPage}
+            sizes='100vw'
+          />
+        ))}
+      </div>
 
       <p className={styles.fallback}>
         Si el catálogo no aparece,{' '}
