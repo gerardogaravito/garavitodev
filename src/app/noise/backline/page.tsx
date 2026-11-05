@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import styles from './page.module.scss';
 
 const pdfUrl = '/backline/garavito-renta-audio.pdf';
@@ -15,7 +16,13 @@ export default function BacklinePage() {
       <header className={styles.header}>
         <div>
           <h1>renta de audio y backline</h1>
-          <p>Gerardo Garavito · WhatsApp 8115110723</p>
+          <Image
+            src='/backline/contact.png'
+            width={563}
+            height={43}
+            alt='Contacto'
+            className={styles.contact}
+          />
         </div>
 
         <a href={pdfUrl} download>

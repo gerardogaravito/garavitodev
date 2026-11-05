@@ -20,13 +20,6 @@
     font-weight: 400;
   }
 
-  p {
-    margin: 0;
-    color: #737373;
-    font-family: var(--font-mono);
-    font-size: 11px;
-  }
-
   a {
     flex: none;
     font-family: PP_Mori_Semibold_Italic, Helvetica, sans-serif;
@@ -38,6 +31,12 @@
       color: red;
     }
   }
+}
+
+.contact {
+  display: block;
+  width: min(100%, 282px);
+  height: auto;
 }
 
 .catalog {
