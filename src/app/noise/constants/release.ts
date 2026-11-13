@@ -3,7 +3,7 @@ export interface ReleaseLink {
   url: string;
 }
 
-// Garavito (homónimo), released on Bandcamp on 2026-10-31; add Apple Music / Spotify once Symphonic publishes
+// Garavito (homónimo), released on Bandcamp on 2026-10-31; Spotify / Apple Music via Symphonic
 export const releaseLinks: ReleaseLink[] = [
   {
     title: 'bandcamp',
@@ -12,5 +12,13 @@ export const releaseLinks: ReleaseLink[] = [
   {
     title: 'soundcloud',
     url: 'https://soundcloud.com/garavito666/sets/garavito',
+  },
+  {
+    title: 'spotify',
+    url: 'https://open.spotify.com/album/4asX5gKgoq7ohTjMsq5rn9',
+  },
+  {
+    title: 'apple music',
+    url: 'https://music.apple.com/pe/album/garavito/6829929337',
   },
 ];
